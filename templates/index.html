@@ -20,16 +20,11 @@
   <header>
     <div class="outer-wrapper">
       <div class="title">
-          adsfjdfkañsjkñaldfjklñadfsjñdkafs
         <hgroup>
           % if homepage_overlay_html:
             ${homepage_overlay_html}
           % else:
-            % if self.stanford_theme_enabled():
-              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
-            % else:
-              <h1>${_("The Future of Online Education")}</h1>
-            % endif
+              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="UPV")}</h1>
             <h2>${_("For anyone, anywhere, anytime")}</h2>
           % endif
         </hgroup>
@@ -60,11 +55,11 @@
       </div>
 
       % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
+        <!--<a href="#video-modal" class="media" rel="leanModal">
           <div class="hero">
             <div class="play-intro"></div>
           </div>
-        </a>
+        </a>-->
       % endif
     </div>
   </header>
