@@ -1,26 +1,63 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
+<%! from django.utils.translation import ugettext as _ %>
 <%namespace name='static' file='/static_content.html'/>
+<%! from microsite_configuration.templatetags.microsite import platform_name %>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
-<div class="wrapper-footer">
+<div class="wrapper wrapper-footer">
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about_edx')}#careers">Careers</a></li>
-          <li><a href="${reverse('about_edx')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
+      <ol>
+          <li class="nav-colophon-01">
+          <li class="nav-colophon-04">
+          <a id="faq" href="http://www.upvx.es/faqedx">
+              ${_("FAQ")}
+          </a>
+          </li>
+          <li class="nav-colophon-05">
+          <a id="contact" href="http://www.upvx.es/contacto?pagina=CursoExcel2010">
+              ${_("Contact")}
+          </a>
+          </li>
+      </ol>
       </nav>
+
+      <div class="colophon-about">
+        <p>Implementado con <a href=http://code.edx.org>Open edX</a></p>
+      </div>
     </div>
+
     <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
+      <nav class="nav-social">
+        <ul>
+          <li class="nav-social-02">
+            <a href="http://www.facebook.com/upvx.es" rel="external">
+              <img src="${static.url('images/social/ico-social-facebook.png')}" alt="Facebook UPV[X]" />
+            </a>
+          </li>
+          <li class="nav-social-03">
+            <a href="https://twitter.com/upvx" rel="external">
+              <img src="${static.url('images/social/ico-social-twitter.png')}" alt="Twitter UPV[X]" />
+            </a>
+          </li>
+          <li class="nav-social-04">
+            <a href="https://plus.google.com/113182363688818072141/" rel="external">
+              <img src="${static.url('images/social/ico-social-google.png')}" alt="Google+ UPV[X]" />
+            </a>
+          </li>
+          <li class="nav-social-05">
+            <a href="http://youtube.com/valenciaupv" rel="external">
+              <img src="${static.url('images/social/ico-social-youtube.png')}" alt="YouTube UPV" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <p class="copyright">&copy; 2013 ASIC UPV</p>
+
     </div>
   </footer>
 </div>

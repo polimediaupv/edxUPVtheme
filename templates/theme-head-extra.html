@@ -1,3 +1,21 @@
 ## mako
-
-<%namespace name='static' file='/static_content.html'/>
+<form action="/i18n/setlang/" method="POST" id="language_form">
+    <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
+    <select onchange="this.form.submit()" name="language" id="language_code">
+        <option value="es_ES"
+        % if LANGUAGE_CODE == "es-es":
+            selected="selected"
+        % endif
+        > Español</option>
+        <option value="en"
+        % if LANGUAGE_CODE == "en":
+            selected="selected"
+        % endif
+        >English</option>
+        <option value="ca@valencia"
+        % if LANGUAGE_CODE == "ca@valencia":
+            selected="selected"
+        % endif
+        >Valencià</option>
+    </select>
+</form>
