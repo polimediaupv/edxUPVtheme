@@ -1,9 +1,12 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! from microsite_configuration import microsite %>
 
+
+<link rel="stylesheet" type="text/css" href="${static.url('themes/default/css/asic.css')}" />
 <%inherit file="main.html" />
 
 <%namespace name='static' file='static_content.html'/>
+<!--<link rel="stylesheet" type="text/css" href="${static.url('themes/default/static/css/asic.css')}" /> -->
 
 <%namespace file='main.html' import="login_query"/>
 
@@ -12,6 +15,7 @@
 <%! from django_countries.countries import COUNTRIES %>
 <%! from django.utils.translation import ugettext as _ %>
 <%! from student.models import UserProfile %>
+<%! from django.contrib.auth.models import User %>
 <%! from datetime import date %>
 <%! from third_party_auth import pipeline, provider %>
 <%! import calendar %>
@@ -21,6 +25,131 @@
 
 
 
+<script language="JavaScript">
+
+    document.addEventListener('DOMContentLoaded', function()
+    {
+      var origin_url = document.referrer;
+      if (origin_url.match(/edit_profile$/)){ //=='http://0.0.0.0:8000/edit_profile'){
+
+                $("#updated_profile_link").click();
+
+                setTimeout(function(){
+                    window.location.href='dashboard';
+                }, 3000);
+
+
+            }
+
+     else
+     {
+
+     }
+    });
+
+
+    $(function() {
+
+
+        $('a[rel*=leanModal]').leanModal();
+
+
+        $("#unsubscribe_accept").click(
+             function()
+             {
+               window.location.href='/deactivate';
+             }
+        );
+
+
+        $("#return_home").click(
+             function()
+             {
+               window.location.href='dashboard';
+             }
+        );
+
+
+
+    });
+
+</script>
+
+<section id="applied_update_profile" class="modal">
+  <div class="inner-wrapper" role="dialog" aria-labelledby="apply_update_profile-title">
+
+
+
+    <header>
+      <h2 id="apply_update_profile-title">
+        ${_("Updated Profile")}
+        <span class="sr">,
+          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
+          ${_("window open")}
+        </span>
+      </h2>
+      <hr/>
+    </header>
+    <div id="apply_update_profile_body">
+      <form id="apply_update_profile_form">
+        <div id="apply_update_profile_error" class="modal-form-error"> </div>
+        ## Translators: note that {platform} {cert_name_short} will look something like: "edX certificate". Please do not change the order of these placeholders.
+        <p>${_("Your data has been correctly updated. You will be redirected to your dashboard page automatically.")}</p>
+
+        <br/>
+        <fieldset>
+          <div class="">
+
+
+              <input type="button"  value="${_('Return to dashboard')}" id="return_home"/>
+              <!--<input class="close-modal" type="button" value="${_('No')}" id="unsubscribe_deny2"/> -->
+            <!-- <input type="submit" id="submit_unsubscribe" value="${_('Yes, I want to unsubscribe from {platform}').format(platform=settings.PLATFORM_NAME)}"> -->
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section id="apply_unsubscribe" class="modal" aria-hidden="true" >
+  <div class="inner-wrapper" role="dialog" aria-labelledby="unsubscribe-title">
+    <button class="close-modal">
+      <i class="icon-remove"></i>
+      <span class="sr">
+        ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
+        ${_('Close')}
+      </span>
+    </button>
+
+    <header>
+      <h2 id="unsubscribe-title">
+        ${_("Unsubscribe from {platform}").format(platform=settings.PLATFORM_NAME)}
+        <span class="sr">,
+          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
+          ${_("window open")}
+        </span>
+      </h2>
+      <hr/>
+    </header>
+    <div id="unsubscribe_body">
+      <form id="unsubscribe_form">
+        <div id="unsubscribe_error" class="modal-form-error"> </div>
+        ## Translators: note that {platform} {cert_name_short} will look something like: "edX certificate". Please do not change the order of these placeholders.
+        <p>${_("If you unsubscribe from the platform, all your personal data will be erased and you'll be no longer able to access your work and progress.As soon as you press the below button, you'll be logged out. Are you sure you want to unsubscribe?")}</p>
+
+        <br/>
+        <fieldset>
+          <div class="">
+
+              <input type="button" class="btn btn-primary" value="${_('Yes, I want to unsubscribe')}" id="unsubscribe_accept"/>
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>
 
 
 <section class="introduction">
@@ -32,16 +161,37 @@
   </header>
 </section>
 
+
+
 <section class="register container">
+     <div id="asic">
   <section role="main" class="content">
+
+
 
         <form action="/edit_profile" method="post">
             <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+             <div class="group group-form group-form-secondary group-form-personalinformation">
+                <ol class="list-input">
+
+            <li class="field optional asic-field" id="field-fullname">
+
+            <label class="inline">${_("Full Name")}: </label> <span class="negrita">${up.name}</span>
+
+            </li>
+
+            <li class="field optional asic-field" id="field-email">
+
+            <label class="inline">${_("Email")}: </label> <span class="negrita">${user.email}</span>
 
 
-            <li class="field-group">
-            <div class="field optional select" id="field-country">
-              <label for="country">${_("Country")}</label>
+            </li>
+
+
+          <li class="field-group">
+          <div class="field optional select asic-field" id="field-country">
+
+              <label for="country">${_("Country")}: </label>
               <select id="country" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
                 <option value="">--</option>
 
@@ -59,9 +209,10 @@
             </li>
 
 
-            <li class="field-group">
+
+            <li class="field optional select asic-field">
             <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['level_of_education']} select" id="field-education-level">
-              <label for="education-level">${_("Highest Level of Education Completed")}</label>
+              <label for="education-level">${_("Highest Level of Education Completed")}: </label>
               <select id="education-level" name="level_of_education" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['level_of_education'] == 'required' else ''}>
                 <option value="">--</option>
 
@@ -73,13 +224,13 @@
                   %endif
                 %endfor
               </select>
-            </div>
+             </div>
             </li>
 
 
-            <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['gender']} select" id="field-gender">
-              <label for="gender">${_("Gender")}</label>
+            <li class="field optional select asic-field">
+            <!-- <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['gender']} select" id="field-gender"> -->
+              <label for="gender">${_("Gender")}: </label>
               <select id="gender" name="gender" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['gender'] == 'required' else ''}>
                 <option value="">--</option>
 
@@ -92,12 +243,12 @@
 
                 %endfor
               </select>
-            </div>
+            <!-- </div> -->
           </li>
 
-          <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['year_of_birth']} select" id="field-yob">
-              <label for="yob">${_("Year of Birth")}</label>
+            <li class="field optional select asic-field">
+            <!-- <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['year_of_birth']} select" id="field-yob"> -->
+              <label for="yob">${_("Year of Birth")}: </label>
               <select id="yob" name="year_of_birth" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['year_of_birth'] == 'required' else ''}>
 
                 <option value="">--</option>
@@ -112,43 +263,60 @@
                 %endfor
 
               </select>
-            </div>
+            <!-- </div> -->
           </li>
 
 
 
 
-            <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['goals']} text" id="field-goals">
-                <label for="goals">${_("Goals")}</label>
-                <textarea id="goals" name="goals"  ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''}>${up.goals}</textarea>
-            </div>
+            % if settings.REGISTRATION_EXTRA_FIELDS['goals'] != 'hidden':
+            <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['goals']} text asic-field" id="field-goals">
+
+
+                <label for="goals">${_("Goals")}: </label>
+                <textarea id="goals" name="goals"${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['goals'] == 'required' else ''}>${up.goals}</textarea>
+
 
             </li>
+            % endif
 
-            <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['mailing_address']} text" id="field-address-mailing">
-            <label for="address-mailing">${_("Mailing Address")}</label>
+            % if settings.REGISTRATION_EXTRA_FIELDS['mailing_address'] != 'hidden':
+            <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['mailing_address']} text asic-field" id="field-address-mailing">
+            <!--<li class="field-group"> -->
+            <!-- <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['mailing_address']} text" id="field-address-mailing"> -->
+            <label for="address-mailing">${_("Mailing Address")}: </label>
             <textarea id="address-mailing" name="mailing_address" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['mailing_address'] == 'required' else ''}>${up.mailing_address}</textarea>
-            </div>
+            <!-- </div> -->
             </li>
+            % endif
+                    </ol>
 
-
-
+            </div>
 
 
             <div class="form-actions">
+                <span>
+                    <button name="_update" type="submit" id="submit_update" class="btn btn-primary">${_("Update Profile")}</button>
+                    <button name="_cancel" type="submit" id="submit_cancel" class="btn btn-primary">${_("Cancel Update")}</button>
+                    <a id="unsubscribe_link" href="#apply_unsubscribe" rel="leanModal" class="btn btn-primary active" role="button" >${_("Unsubscribe")}</a>
+                    <a id="updated_profile_link" href="#applied_update_profile" rel="leanModal"></a>
 
+                </span>
 
-
-            <button name="submit" type="submit" id="submit" class="action action-primary action-update">${_("Update Profile")}</button>
-
-
-
+            </div>
 
          </form>
-      </section>
-    </section>
+     </div>
+  </section>
+</section>
+
+
+
+
+
+
+
+
 
 
 

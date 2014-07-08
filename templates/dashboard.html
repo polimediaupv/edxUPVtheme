@@ -138,45 +138,7 @@
              });
        return false;
     });
-/*
-     $("#submit_unsubscribe").click(
-         function()
-         {
 
-           location.href="/deactivate";
-         }
- );
-
-
-
-    $("#submit_unsubscribe").click(
-             function()
-             {
-
-               window.location.href='/hola';
-             }
-     );*/
-
-
-
-    $("#submit_unsubscribe").click(function(){
-
-        $.post('${reverse("deactivate_user")}', {},
-                function(data) {
-                    if(data.success) {
-                        //window.opener.document.location = "${reverse('logout')}";
-                        //location.reload();
-                        location.href = "${reverse('dashboard')}";
-                    } else {
-                        $("#unsubscribe_error").html(data.error).stop().css("display", "block");
-                    }
-                });
-
-        //window.opener.document.location = "${reverse('logout')}";
-
-
-
-     });
 
     $("#email_settings_form").submit(function(){
       $.ajax({
@@ -269,6 +231,12 @@
             <%include file='dashboard/_dashboard_info_language.html' />
         %endif
 
+        %if hasattr(settings, "ALLOW_PROFILE_EDITING"):
+        <li class="info--username">
+          <span class="title"><div class="icon icon-pencil"></div>${_("Edit Profile")} (<a href="${reverse('update_user')}" rel="leanModal" id="update_user_button">${_("edit")}</a>)</span>
+        </li>
+        % endif
+
         % if settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
         <li class="controls--account">
           <span class="title">
@@ -326,21 +294,9 @@
         </li>
         %endif
 
-        %if settings.ALLOW_UNSUBSCRIBE:
-        <li class="controls--account">
-          <span class="title"><div class="icon"></div><a href="#apply_unsubscribe" rel="leanModal" id="unsubscribe_button">${_("Unsubscribe")}</a></span>
-          <!-- <form id="password_reset_form" method="post" data-remote="true" action="${reverse('password_reset')}">
-            <input id="id_email" type="hidden" name="email" maxlength="75" value="${user.email}" />
-            <!-- <input type="submit" id="pwd_reset_button" value="${_('Reset Password')}" /> -->
-          <!-- </form> -->
-        </li>
-        %endif
 
-        %if settings.ALLOW_PROFILE_EDITING:
-        <li class="controls--account">
-          <span class="title"><div class="icon"></div><a href="${reverse('show_profile')}" rel="leanModal" id="update_user_button">${_("Show profile")}</a></span>
-        </li>
-        % endif
+
+
 
         <%include file='dashboard/_dashboard_status_verification.html' />
 
@@ -549,46 +505,7 @@
   </div>
 </section>
 
-%if settings.ALLOW_UNSUBSCRIBE:
 
-<section id="apply_unsubscribe" class="modal" aria-hidden="true">
-  <div class="inner-wrapper" role="dialog" aria-labelledby="change-name-title">
-    <button class="close-modal">
-      <i class="icon-remove"></i>
-      <span class="sr">
-        ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
-        ${_('Close')}
-      </span>
-    </button>
-
-    <header>
-      <h2 id="unsubscribe-title">
-        ${_("Unsubscribe from {platform}").format(platform=settings.PLATFORM_NAME)}
-        <span class="sr">,
-          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
-          ${_("window open")}
-        </span>
-      </h2>
-      <hr/>
-    </header>
-    <div id="unsubscribe_body">
-      <form id="unsubscribe_form">
-        <div id="unsubscribe_error" class="modal-form-error"> </div>
-        ## Translators: note that {platform} {cert_name_short} will look something like: "edX certificate". Please do not change the order of these placeholders.
-        <p>${_("If you unsubscribe from the platform, all your personal data will be erased and you'll be no longer able to access your work and progress.As soon as you press the below button, you'll be logged out.")}</p>
-        <br/>
-        <fieldset>
-          <div class="submit">
-
-              <a href="${reverse('deactivate_user')}"  class="submit">Please, unsubscribe me!</a>
-            <!-- <input type="submit" id="submit_unsubscribe" value="${_('Yes, I want to unsubscribe from {platform}').format(platform=settings.PLATFORM_NAME)}"> -->
-          </div>
-        </fieldset>
-      </form>
-    </div>
-  </div>
-</section>
-%endif
 
 
 
