@@ -1,6 +1,7 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
+<link rel="stylesheet" type="text/css" href="${static.url('themes/default/css/asic.css')}" />
 <%namespace name='static' file='/static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 <%! from datetime import datetime %>
@@ -182,7 +183,7 @@
       </nav>
 
       <div>
-          <a href="http://openedx.org">
+          <a href="http://openedx.org" id="poweredbyopenedx">
             <img src="${static.url('themes/default/images/edx-openedx-logo-tag.png')}" width="150" height="50" alt="Powered by Open edX" />
           </a>
       </div>
