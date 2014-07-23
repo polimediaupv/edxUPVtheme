@@ -1,6 +1,7 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
+<link rel="stylesheet" type="text/css" href="${static.url('themes/default/css/asic.css')}" />
 <%namespace name='static' file='/static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 <%! from datetime import datetime %>
@@ -130,7 +131,7 @@
 
     <header>
       <h2>
-        <span id="change_cookies_title">Change Cookies</span>
+        <span id="change_cookies_title">Cambiar Cookies</span>
         <span class="sr">,
           window open
         </span>
@@ -145,7 +146,7 @@
             <label>Este sitio web utiliza cookies propias y de terceros para optimizar tu navegación, adaptarse a tus preferencias y realizar labores analíticas.</label>
           </div>
           <section>
-            <p>Aceptas nuestra <a class="cl" href="${reverse('tos')}#cookies">politica de cookies</a>?.</p>
+            <p>Aceptas nuestra <a class="cl" href="http://www.upvx.es/condiciones#cookies">politica de cookies</a>?.</p>
           </section>
           <div class="">
               <input type="button" value="${_('Yes')}" id="cookiesaccept"/>
@@ -165,7 +166,7 @@
       <nav class="nav-colophon">
       <ol>
           <li class="nav-colophon-03">
-          <a id="cookiechangerlink" href="#change_cookies" rel="leanModal" class="edit-email">${_("Cookies Preferences")}
+          <a id="cookiechangerlink" href="#change_cookies" rel="leanModal" class="edit-email">Cookies
           </a>
           </li>
           <li class="nav-colophon-04">
@@ -174,15 +175,17 @@
           </a>
           </li>
           <li class="nav-colophon-05">
-          <a id="contact" href="http://www.upvx.es/contacto?pagina=CursoExcel2010">
+          <a id="contact" href="http://www.upvx.es/contacto">
               ${_("Contact")}
           </a>
           </li>
       </ol>
       </nav>
 
-      <div class="colophon-about">
-        <p>Implementado con <a href=http://code.edx.org>Open edX</a></p>
+      <div>
+          <a href="http://openedx.org" id="poweredbyopenedx">
+            <img src="${static.url('themes/default/images/edx-openedx-logo-tag.png')}" width="150" height="50" alt="Powered by Open edX" />
+          </a>
       </div>
     </div>
 
