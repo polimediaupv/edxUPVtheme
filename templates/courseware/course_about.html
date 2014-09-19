@@ -32,12 +32,16 @@
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
   <meta property="og:title" content="${get_course_about_section(course, 'title')}" />
   <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
+   % if course.display_org_with_default == "coursebuilder":
+        <meta http-equiv="refresh" content="0; url=http://${course.display_number_with_default}.upvx.es" />
+   % endif
 </%block>
 
 <%block name="js_extra">
 
   <script type="text/javascript">
-  (function() {
+
+    (function() {
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
@@ -175,6 +179,10 @@
         % elif course.display_org_with_default == "demo":
           
           <h1>${_("Demo Course")}</h1>
+
+        % elif course.display_org_with_default == "coursebuilder":
+
+          <h1><a href ="http://${course.display_number_with_default}.upvx.es">${_("Course Builder")}</a></h1>
 
         %else:
           <a href="#" class="register">
