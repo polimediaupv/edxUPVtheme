@@ -87,9 +87,11 @@
             %>
 
             %for course in reordered:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
+                % if course.display_org_with_default != "spoc"
+                    <li class="courses-listing-item">
+                        <%include file="course.html" args="course=course" />
+                    </li>
+                % endif
             %endfor
             </ul>
         </section>
