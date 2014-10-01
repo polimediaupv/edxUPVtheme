@@ -12,7 +12,9 @@
 %>
 <%namespace name='static' file='../static_content.html'/>
 <%! from microsite_configuration import microsite %>
-
+<%! from django.utils.timezone import UTC %>
+<%! import pytz %>
+<%! from datetime import datetime, timedelta %>
 <%inherit file="../main.html" />
 
 <%block name="headextra">
@@ -147,7 +149,16 @@
             % endif
           </h1>
         </hgroup>
+        <%
+        now = datetime.now(UTC())
+        start = course.enrollment_start or datetime.min.replace(tzinfo=pytz.UTC)
+        end = course.enrollment_end or datetime.max.replace(tzinfo=pytz.UTC)
 
+        canenroll = False
+
+        if start < now < end:
+            canenroll = True
+          %>
         <div class="main-cta">
         %if user.is_authenticated() and registered:
           %if show_courseware_link:
@@ -188,6 +199,16 @@
         % elif course.display_org_with_default == "demo":
           
           <h1>${_("Demo Course")}</h1>
+
+        % elif course.invitation_only:
+
+          <span class="register disabled">
+            ${_("Invitational only")}
+          </span>
+        % elif canenroll == False :
+          <span class="register disabled">
+            ${_("Enrollment is closed")}
+          </span>
 
         % elif course.display_org_with_default == "coursebuilder":
 
