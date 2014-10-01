@@ -199,12 +199,7 @@
         % elif course.display_org_with_default == "demo":
           
           <h1>${_("Demo Course")}</h1>
-
-        % elif course.invitation_only:
-
-          <span class="register disabled">
-            ${_("Invitational only")}
-          </span>
+        
         % elif canenroll == False :
           <span class="register disabled">
             ${_("Enrollment is closed")}
