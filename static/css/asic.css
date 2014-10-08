@@ -61,3 +61,46 @@
     border-bottom: 0;
 }
 
+#action-list li {
+    margin-bottom: 5px;
+}
+
+#delete_course_button {
+    background-color: #d9534f;
+    border: 1px solid #d11121;
+}
+
+#contact_submit_button {
+    margin-top: 15px;
+    background: #275b88;
+    color: #f2f2f2;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: none;
+    border-radius: 2px;
+    transition: color 0.25s ease-in-out,background 0.25s ease-in-out,box-shadow 0.25s ease-in-out;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    float: left;
+    -webkit-appearance: button;
+    line-height: normal;
+    font-size: 100%;
+    font-family: sans-serif;
+    box-shadow: inset 0 1px 0 0 #4c7894;
+    /*font: normal 1.2rem/1.6rem "Source Sans","Open Sans",Verdana,Geneva,sans-serif,sans-serif;*/
+    -webkit-font-smoothing: antialiased;
+}
+
+#contact_submit_button:hover{
+    background: #428bca;
+}
+
+.tos  {
+    text-align: justify;
+}
+
+.contacts {
+    text-align: justify;
+}
