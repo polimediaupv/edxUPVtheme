@@ -171,15 +171,16 @@
           </a>
           </li>
           <li class="nav-colophon-04">
-          <a id="faq" href="http://upvxinicio.appspot.com/faqedx">
+          <a id="faq" href="${marketing_link('FAQ')}">
               ${_("FAQ")}
           </a>
           </li>
           <li class="nav-colophon-05">
-          <a id="contact" href="http://upvxinicio.appspot.com/contacto">
+          <a id="contact" href="${marketing_link('CONTACT')}">
               ${_("Contact")}
           </a>
           </li>
+
       </ol>
       </nav>
 
@@ -217,6 +218,14 @@
       </nav>
 
       <p class="copyright" style="text-align:right">&copy; 2013 ASIC UPV</p>
+
+        <nav class="nav-legal" style="text-align:right">
+          <ul>
+            <li class="nav-legal-02">
+              <a href="${marketing_link('TOS')}">${_("Terms of Service and Honor Code")}</a>
+            </li>
+          </ul>
+        </nav>
 
     </div>
   </footer>
