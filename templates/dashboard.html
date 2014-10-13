@@ -232,9 +232,11 @@
         %endif
 
         %if hasattr(settings, "ALLOW_PROFILE_EDITING"):
-        <li class="info--username">
-          <span class="title"><div class="icon icon-pencil"></div>${_("Edit Profile")} (<a href="${reverse('update_user')}" id="update_user_button">${_("edit")}</a>)</span>
-        </li>
+          % if settings.ALLOW_PROFILE_EDITING:
+            <li class="info--username">
+              <span class="title">${_("Edit Profile")} (<a href="${reverse('update_user')}" id="update_user_button">${_("edit")}</a>)</span>
+            </li>
+          % endif
         % endif
 
         % if settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH'):
