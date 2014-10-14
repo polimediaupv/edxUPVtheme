@@ -110,3 +110,6 @@ div.cookies-paragraph-asic{
     margin-bottom: 40px;
 }
 
+form label{
+    display: inline-flex;
+}
