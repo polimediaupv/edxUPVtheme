@@ -1,5 +1,11 @@
+html {
+    height: 100%;
+    background: #d7d6d1;
+}
+
 body {
     background: #d7d6d1;
+    height: 100%;
 }
 
 header.global {
@@ -26,9 +32,21 @@ header.global ol.user {
 header.global.slim {
    box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1);   
    padding: 0px 0 0px 0;
+   height: auto;
+   border-bottom: 1px solid gray;
+   background: rgba(255,255,255,1);
+}
+
+header.global.slim .nav-global {
+  margin-top: 0px;
+}
+
+header.global.slim ol.user {
+   margin-top: 3px;
 }
 
 .content-wrapper {
+    min-height: 74.5%;
     width: 950px;
     box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
     padding-bottom: 0px;
