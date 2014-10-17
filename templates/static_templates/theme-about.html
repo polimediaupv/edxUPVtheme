@@ -1,0 +1,34 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Vision")}</%block>
+
+<section class="container about">
+<h1>${_("Vision")}</h1>
+<tr>
+    <td id="condiciones">
+	<br/>
+	<h2 style="font-size: 24px;">Sobre UPV[X]</h2>
+
+	<p>Con esta plataforma la <a href="http://www.upv.es" target="_blank">Universitat Politècnica de València</a> apuesta por facilitar el acceso a la formación de calidad a todos los rincones del mundo, contribuyendo a extender este nuevo formato de enseñar a la educación en castellano. </p>
+	<p>Nuestra intención es aprovechar las economías de escala de Internet para que nuestros profesores puedan hacer llegar la enseñanza universitaria a decenas de miles de estudiantes.</p>
+	<br/>
+	<h2 style="font-size: 24px;">Nuestros cursos </h2>
+
+	<p> Los cursos de UPVX están diseñados para ayudarte a dominar la materia, trabajando de forma independiente a tu ritmo.</p>
+	<p>Para ello están estructurados en unidades en las que los conceptos están claramente independizados. Dentro de cada unidad hay una lección por concepto, consistente en un vídeo cuya duración está normalmente entre 3 y 12 minutos, y una pregunta de refuerzo al final para fijar los conceptos.</p>
+	<p>Al terminar cada unidad hay un examen tipo test que te permitirá comprobar tu evolución y que cuenta en cierto porcentaje para la evaluación final. Con ello tendrás una realimentación frecuente de tu progreso que te permitirá ir controlando tu proceso de aprendizaje.</p>
+	<p>Al acabar el curso tendrás acceso a un examen final para evaluar si has alcanzado los objetivos de aprendizaje. Si los has hecho se expedirá una acreditación digital sin validez académica, sino no pasa nada, puedes repasar los contenidos y volver a intentarlo o quedarte con lo que hayas aprendido, que es lo realmente importante.</p>
+	<p>Los cursos incluyen también un foro de debate moderado por el profesor donde los alumnos podrán expresar sus dudas sobre el curso y comentar aquellas cosas que les parezcan interesantes, enriqueciendo la experiencia del curso. En él tendrás acceso a una comunidad online de internautas interesados en lo mismo que tú y que aprenderán a tu lado.</p>
+	<p>Esperamos sinceramente que disfrutes de nuestros cursos y aprendas con nosotros.</p>
+	<p>¿Quieres más información sobre la plataforma? Puedes ver este vídeo:</p>
+	<br/>
+	<p style="text-align:center"> <iframe width="640" height="360" src="https://www.youtube.com/embed/UCvZPIPZDyM?wmode=opaque&amp;autohide=1&amp;fs=1&amp;rel=0&amp;showinfo=0&amp;theme=light	" frameborder="0" allowfullscreen></iframe></p>
+	<br/>
+	<h2 style="font-size: 24px;">Contacto</h2>
+
+	<p>Para contactar con nosotros visita nuestra <a href="${marketing_link('CONTACT')}">página de contacto</a>
+	<br/><br/><br/><br/>
+  </tr>
+
+</section>
