@@ -110,6 +110,11 @@ div.cookies-paragraph-asic{
     margin-bottom: 40px;
 }
 
+form.choicegroup label {
+    clear:inherit;
+    float: none;
+}
+
 form label{
-    display: inline-flex;
+    display: flex;
 }
