@@ -52,8 +52,12 @@ header.global.slim ol.user {
     padding-bottom: 0px;
 }
 
+.login .content, .register .content, .passwordreset .content, #forgot-password-modal #password-reset .content {
+    width: 64.5%;
+}
+
 .home>header {
-    height: 205px;
+    height: 199px;
     width: 950px;
     border-bottom: 0px;
     margin-top: 0px;
@@ -191,7 +195,36 @@ header.global.slim ol.user.in_course {
 }
 
 .find-courses .courses {
-   padding: 25px 15px 15px;
+    padding: 25px 15px 15px;
+}
+
+.find-courses header.search {
+    background-image: url("/static/themes/default/images/find-courses-bg.jpg");
+    background-position: inherit;
+    height: 199px;
+    margin-top: 0px;
+}
+
+.highlighted-courses .courses .course, .find-courses .courses .course {
+    background: #fbfbfb;
+    border: none;
+    border-radius: 8px;
+}
+
+.highlighted-courses .courses .course header.course-preview, .find-courses .courses .course header.course-preview {
+    background-color: #d5d5d5;
+    background-image: none;
+    opacity: 0.9;
+}
+
+.highlighted-courses .courses .course .inner-wrapper, .find-courses .courses .course .inner-wrapper {
+   border: none;
+   border-radius: 8px;
+}
+
+li.courses-listing-item {
+    border: none;
+    border-radius: 8px;
 }
 
 .dashboard .my-courses .course .info>hgroup .date-block {
