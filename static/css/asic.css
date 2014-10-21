@@ -32,7 +32,7 @@ header.global ol.user {
 header.global.slim {
    box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1);   
    padding: 0px 0 0px 0;
-   height: auto;
+   height: 69px;
    border-bottom: 1px solid gray;
    background: rgba(255,255,255,1);
 }
@@ -263,3 +263,26 @@ div.cookies-paragraph-asic{
     margin-bottom: 40px;
 }
 
+.view-register, .view-login, .view-passwordreset {
+    background: #d7d6d1;
+}
+
+.view-register .container, .view-register section.outside-app,
+.view-register .introduction, .view-login .container,
+.view-login section.outside-app, .view-login .introduction,
+.view-passwordreset .container, .view-passwordreset section.outside-app,
+.view-passwordreset .introduction{
+    width: 950px;
+}
+
+header.global.slim ol.user.in_course {
+    margin-top:-10px;
+}
+
+.view-register header.global nav, .view-login header.global nav {
+    width:920px;
+}
+
+.dashboard .my-courses .course .info>hgroup h3 a{
+    padding-top:20px;
+}

@@ -72,7 +72,7 @@ site_status_msg = get_site_status_msg(course_id)
         % endif
       </%block>
     </ol>
-    <ol class="user">
+    <ol class="user ${"in_course" if course else ""}">
       <li class="primary">
         <a href="${reverse('dashboard')}" class="user-link">
           <span class="avatar"></span>
