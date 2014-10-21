@@ -140,6 +140,10 @@ site_status_msg = get_site_status_msg(course_id)
           % else:
               % if course:
                <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
+              % else:
+                   <a href="${marketing_link('ROOT')}">
+                    <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
+                   </a>
               % endif
           % endif
       % endif
