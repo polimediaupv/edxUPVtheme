@@ -241,7 +241,15 @@ li.courses-listing-item {
     margin-left: 10px;
 }
 
+.course-info .course-sidebar {
+    padding-right: 10px;
+    width: 30%;
+    float: right;
+}
 
+.course-info header.course-profile{
+    margin-top: 0px;
+}
 
 
 #unsubscribe_link {
