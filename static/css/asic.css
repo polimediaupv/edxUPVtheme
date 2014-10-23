@@ -214,6 +214,10 @@ header.global.slim ol.user.in_course {
     float: right;
 }
 
+.course-info header.course-profile{
+    margin-top: 0px;
+}
+
 
 #unsubscribe_link {
         color: #f2f2f2;
