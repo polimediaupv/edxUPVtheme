@@ -208,7 +208,11 @@ header.global.slim ol.user.in_course {
     margin-left: 10px;
 }
 
-
+.course-info .course-sidebar {
+    padding-right: 10px;
+    width: 30%;
+    float: right;
+}
 
 
 #unsubscribe_link {
