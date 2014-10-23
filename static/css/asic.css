@@ -161,6 +161,40 @@ nav.course-material ol.course-tabs li a.active {
     background-color: #CC0000;
 }
 
+.view-register, .view-login, .view-passwordreset {
+    background: #d7d6d1;
+}
+
+.view-register .container, .view-register section.outside-app,
+.view-register .introduction, .view-login .container,
+.view-login section.outside-app, .view-login .introduction,
+.view-passwordreset .container, .view-passwordreset section.outside-app,
+.view-passwordreset .introduction{
+    width: 950px;
+}
+
+header.global.slim ol.user.in_course {
+    margin-top:-10px;
+}
+
+.view-register header.global nav, .view-login header.global nav {
+    width:920px;
+}
+
+.dashboard .my-courses .course .info>hgroup h3 a{
+    padding-top:20px;
+}
+
+.static-container.tos {
+    width: 95%;
+    padding: 20px 0px 120px;
+}
+
+.find-courses .courses {
+   padding: 25px 15px 15px;
+}
+
+
 #unsubscribe_link {
         color: #f2f2f2;
         font-weight: 400;
@@ -263,31 +297,5 @@ div.cookies-paragraph-asic{
     margin-bottom: 40px;
 }
 
-.view-register, .view-login, .view-passwordreset {
-    background: #d7d6d1;
-}
 
-.view-register .container, .view-register section.outside-app,
-.view-register .introduction, .view-login .container,
-.view-login section.outside-app, .view-login .introduction,
-.view-passwordreset .container, .view-passwordreset section.outside-app,
-.view-passwordreset .introduction{
-    width: 950px;
-}
 
-header.global.slim ol.user.in_course {
-    margin-top:-10px;
-}
-
-.view-register header.global nav, .view-login header.global nav {
-    width:920px;
-}
-
-.dashboard .my-courses .course .info>hgroup h3 a{
-    padding-top:20px;
-}
-
-.static-container.tos {
-    width: 95%;
-    padding: 20px 0px 120px;
-}
