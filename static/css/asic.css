@@ -194,6 +194,22 @@ header.global.slim ol.user.in_course {
    padding: 25px 15px 15px;
 }
 
+.dashboard .my-courses .course .info>hgroup .date-block {
+    right: 10px;
+}
+
+.dashboard .my-courses{
+    float: right;
+    width: 70%;
+}
+
+.dashboard .profile-sidebar{
+    width: 26%;
+    margin-left: 10px;
+}
+
+
+
 
 #unsubscribe_link {
         color: #f2f2f2;
