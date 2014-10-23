@@ -286,3 +286,8 @@ header.global.slim ol.user.in_course {
 .dashboard .my-courses .course .info>hgroup h3 a{
     padding-top:20px;
 }
+
+.static-container.tos {
+    width: 95%;
+    padding: 20px 0px 120px;
+}
