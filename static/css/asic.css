@@ -46,7 +46,6 @@ header.global.slim ol.user {
 }
 
 .content-wrapper {
-    min-height: 74.5%;
     width: 950px;
     box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
     padding-bottom: 0px;
@@ -97,7 +96,6 @@ header.global.slim ol.user {
 .container>div {
    border-radius: 0px;
    border: 0;
-   min-height: 700px;
 }
 
 nav.course-material ol.course-tabs {
@@ -272,6 +270,7 @@ nav.course-material ol.course-tabs li a.new-post-asic{
     box-shadow: none;
     font-size:12px;
     border-radius: 0px;
+    line-height: 24px;
 
 }
 
@@ -285,12 +284,8 @@ nav.course-material ol.course-tabs li a.new-post-asic{
     background-color: black;
 }
 
-.container .discussion-body .discussion-article{
-    min-height: 648px;
-}
-
-.forum-nav{
-    min-height: 650px;
+.highlighted-courses .courses .course .info, .find-courses .courses .course .info{
+  border-radius: 8px;
 }
 
 #unsubscribe_link {
