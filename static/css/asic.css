@@ -97,6 +97,7 @@ header.global.slim ol.user {
 .container>div {
    border-radius: 0px;
    border: 0;
+   min-height: 700px;
 }
 
 nav.course-material ol.course-tabs {
@@ -259,6 +260,38 @@ div.info-wrapper section.handouts{
     width: 30%;
 }
 
+nav.course-material ol.course-tabs li a.new-post-asic{
+    padding-bottom: 0px;
+}
+
+#post-btn-asic{
+    height: 24px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    box-shadow: none;
+    font-size:12px;
+    border-radius: 0px;
+
+}
+
+#post-btn-asic:hover{
+    background: grey;
+}
+
+.container .discussion-body .discussion-submit-post{
+    background-image: none;
+    border: none;
+    background-color: black;
+}
+
+.container .discussion-body .discussion-article{
+    min-height: 648px;
+}
+
+.forum-nav{
+    min-height: 650px;
+}
 
 #unsubscribe_link {
         color: #f2f2f2;
