@@ -288,6 +288,10 @@ nav.course-material ol.course-tabs li a.new-post-asic{
   border-radius: 8px;
 }
 
+.course-info header.course-profile{
+    background-image: url("/static/themes/default/images/about-bg.jpg");
+}
+
 #unsubscribe_link {
         color: #f2f2f2;
         font-weight: 400;
