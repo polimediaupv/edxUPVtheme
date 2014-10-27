@@ -302,6 +302,12 @@ form label{
 }
 
 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #unsubscribe_link {
         color: #f2f2f2;
         font-weight: 400;
