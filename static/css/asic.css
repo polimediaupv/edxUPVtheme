@@ -292,6 +292,16 @@ nav.course-material ol.course-tabs li a.new-post-asic{
     background-image: url("/static/themes/default/images/about-bg.jpg");
 }
 
+form.choicegroup label {
+    clear:inherit;
+    float: none;
+}
+
+form label{
+    display: flex;
+}
+
+
 #unsubscribe_link {
         color: #f2f2f2;
         font-weight: 400;
