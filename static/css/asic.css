@@ -242,7 +242,7 @@ li.courses-listing-item {
 
 .course-info .course-sidebar {
     padding-right: 10px;
-    width: 30%;
+    width: 32%;
     float: right;
 }
 
@@ -306,6 +306,10 @@ form label{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.course-info .course-sidebar>section.course-summary{
+    padding: 16px 0px 30px;
 }
 
 #unsubscribe_link {
