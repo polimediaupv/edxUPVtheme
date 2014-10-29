@@ -177,7 +177,7 @@ nav.course-material ol.course-tabs li a.active {
 }
 
 header.global.slim ol.user.in_course {
-    margin-top:-10px;
+    margin-top: 15px;
 }
 
 .view-register header.global nav, .view-login header.global nav {
@@ -310,6 +310,15 @@ form label{
 
 .course-info .course-sidebar>section.course-summary{
     padding: 16px 0px 30px;
+}
+
+header.global.slim h2 {
+    width: auto;
+}
+#inicio {
+    display: flex;
+    padding-left: 10px;
+    padding-top: 6px;
 }
 
 #unsubscribe_link {
