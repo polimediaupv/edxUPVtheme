@@ -47,7 +47,7 @@
             %>
 
             %for course in reordered:
-                % if course.display_org_with_default != "poc" and course.end >= timezone.now() :
+                % if course.display_org_with_default.lower() != "poc" and course.end >= timezone.now() :
                     <li class="courses-listing-item">
                         <%include file="course.html" args="course=course" />
                     </li>
