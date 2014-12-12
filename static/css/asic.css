@@ -302,6 +302,51 @@ form label{
     display: flex;
 }
 
+a.toedxorg{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 0 #4c4c4c;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #333;
+    background-image: -webkit-linear-gradient(top, #333 0%,#090909 50%,#020202 50%,#030303 100%);
+    background-image: linear-gradient(to bottom,#333 0%,#090909 50%,#020202 50%,#030303 100%);
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #000;
+    border: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 0 #58503f;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #333;
+    background-image: -webkit-linear-gradient(top, #333 0%,#000112 50%,#000003 50%,#000005 100%);
+    background-image: linear-gradient(to bottom,#333 0%,#000112 50%,#000003 50%,#000005 100%);
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: block;
+    font: normal 1.2rem/1.6rem "Source Sans","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    text-align: center;
+}
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
     width: 80%;

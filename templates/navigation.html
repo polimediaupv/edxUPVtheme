@@ -141,24 +141,24 @@ site_status_msg = get_site_status_msg(course_id)
 
 
     </ol>
-
-    <ol class="right nav-courseware">
-    <li class="nav-courseware-01">
-      % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
-          % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-          <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Log in")}</a>
-          % else:
-              % if course:
-               <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
-              % else:
-                   <a href="${marketing_link('ROOT')}">
-                    <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
-                   </a>
+            <ol class="right nav-courseware">
+            <li class="nav-courseware-01">
+              % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
+                  % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+                  <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Log in")}</a>
+                  % else:
+                      % if course and course.display_org_with_default.lower() != "edxorg":
+                       <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
+                      % else:
+                           <a href="${marketing_link('ROOT')}">
+                            <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
+                           </a>
+                      % endif
+                  % endif
               % endif
-          % endif
-      % endif
-    </li>
-    </ol>
+            </li>
+            </ol>
+
     % endif
   </nav>
 </header>
