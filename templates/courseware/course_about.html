@@ -161,7 +161,7 @@
         %if course.display_org_with_default.lower() == "edxorg":
 
           <a href="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" class="toedxorg" onclick="SetCookie('${course.id.to_deprecated_string().replace("/","_")}','True',30);">
-              ${_("Este curso se realizará en edx.org")}
+              "Este curso se realizará en edx.org"
           </a>
         %elif user.is_authenticated() and registered:
           %if show_courseware_link:
