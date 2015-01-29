@@ -54,6 +54,22 @@
                 % endif
             %endfor
             </ul>
+            <script type="text/javascript">
+                $(".edxorglink").unbind().click(function(event) {
+                    event.preventDefault();
+                    console.log("adsfa");
+                    if (checkCookie(this.attributes['courseid'].value) == "True")
+                    {
+                        window.location.href=this.attributes['edxorg'].value;
+                    }
+                    else
+                    {
+                        SetCookie(this.attributes['courseid'].value,"True",30);
+                        window.location.href=this.attributes['local'].value
+                    }
+                    return false;
+                  });
+            </script>
         </section>
       % endif
 

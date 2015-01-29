@@ -5,22 +5,7 @@ from django.core.urlresolvers import reverse
 from courseware.courses import course_image_url, get_course_about_section
 %>
 <%page args="course" />
-<script type="text/javascript">
-    $(".edxorglink").unbind().click(function(event) {
-        event.preventDefault();
-        console.log("adsfa");
-        if (checkCookie(this.attributes['courseid'].value) == "True")
-        {
-            window.location.href=this.attributes['edxorg'].value;
-        }
-        else
-        {
-            SetCookie(this.attributes['courseid'].value,"True",30);
-            window.location.href=this.attributes['local'].value
-        }
-        return false;
-      });
-</script>
+
 <article id="${course.id.to_deprecated_string()}" class="course">
   %if course.is_newish:
     <span class="status">${_("New")}</span>
