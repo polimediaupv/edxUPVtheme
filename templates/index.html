@@ -1,6 +1,5 @@
 <%! from django.utils.translation import ugettext as _ %>
-<%! from django.utils import timezone %>
-<%! import datetime %>
+
 <%! from django.core.urlresolvers import reverse %>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
@@ -10,8 +9,9 @@
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
+  ## To display a welcome video, change False to True, and add a YouTube ID (11 chars, eg "123456789xX") in the following line
   show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', False)
-  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "XNaiOGxWeto")
+  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "your-youtube-id")
 
   show_partners = microsite.get_value('show_partners', True)
 
@@ -20,7 +20,32 @@
 <section class="home">
   <header>
     <div class="outer-wrapper">
-      
+      <div class="title">
+        <hgroup>
+          % if homepage_overlay_html:
+            ${homepage_overlay_html}
+          % else:
+            % if self.stanford_theme_enabled():
+              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
+              <h2>${_("For anyone, anywhere, anytime")}</h2>
+            % else:
+              ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
+              <h1>${_("Welcome to Open edX!")}</h1>
+              ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
+              <h2>${_("It works! This is the default homepage for this Open edX instance.")}</h2>
+            % endif
+          % endif
+        </hgroup>
+
+      </div>
+
+      % if show_homepage_promo_video:
+        <a href="#video-modal" class="media" rel="leanModal">
+          <div class="hero">
+            <div class="play-intro"></div>
+          </div>
+        </a>
+      % endif
     </div>
   </header>
   <section class="container">
@@ -29,52 +54,28 @@
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
-            <%
-                future=[]
-                past=[]
-                reordered=[]
-                for course in courses:
-                    if course.end == None:
-                        course.end = timezone.now() + datetime.timedelta(days=1)
-                    if course.start > timezone.now():
-                        future.append(course)
-                    else:
-                        past.append(course)
-                future = sorted(future, key=lambda course: course.start)
-                past = sorted(past, key=lambda course: course.start,reverse=True)
-                reordered = future + past
-
-            %>
-
-            %for course in reordered:
-                % if course.display_org_with_default.lower() != "poc" and course.end >= timezone.now() :
-                    <li class="courses-listing-item">
-                        <%include file="course.html" args="course=course" />
-                    </li>
-                % endif
+            %for course in courses:
+              <li class="courses-listing-item">
+                <%include file="course.html" args="course=course" />
+              </li>
             %endfor
             </ul>
-            <script type="text/javascript">
-                $(".edxorglink").unbind().click(function(event) {
-                    event.preventDefault();
-                    console.log("adsfa");
-                    if (checkCookie(this.attributes['courseid'].value) == "True")
-                    {
-                        window.location.href=this.attributes['edxorg'].value;
-                    }
-                    else
-                    {
-                        SetCookie(this.attributes['courseid'].value,"True",30);
-                        window.location.href=this.attributes['local'].value
-                    }
-                    return false;
-                  });
-            </script>
         </section>
       % endif
 
     </section>
   </section>
+</section>
+
+<section id="video-modal" class="modal home-page-video-modal video-modal">
+  <div class="inner-wrapper">
+    <%
+      youtube_video_id = homepage_promo_video_youtube_id
+      if self.stanford_theme_enabled():
+        youtube_video_id = "2gmreZObCY4"
+    %>
+    <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
 </section>
 
 <%block name="js_extra">
