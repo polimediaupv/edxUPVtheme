@@ -98,7 +98,7 @@
   <header>
     <h1 class="title">
       <span class="title-super">${_("Welcome!")}</span>
-      <span class="title-sub">${_("Register below to create your {platform_name} account").format(platform_name=platform_name)}</span>
+      <span class="title-sub" style="text-transform:none;font-size:18px">${_("Register below to create your {platform_name} account").format(platform_name='UPV<font color="red">[X]</font>')}</span>    
     </h1>
   </header>
 </section>
@@ -348,7 +348,7 @@
                 if self.stanford_theme_enabled():
                   honor_code_path = marketing_link('TOS') + "#honor"
                 else:
-                  honor_code_path = marketing_link('HONOR')
+                  honor_code_path = marketing_link('TOS') + "#honor"
               %>
               <label for="honorcode-yes">${_('I agree to the {link_start}Honor Code{link_end}').format(
                 link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=honor_code_path),

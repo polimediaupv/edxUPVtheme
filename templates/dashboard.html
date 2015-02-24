@@ -96,6 +96,14 @@
         <%include file='dashboard/_dashboard_info_language.html' />
         %endif
 
+        %if hasattr(settings, "ALLOW_PROFILE_EDITING"):
+          % if settings.ALLOW_PROFILE_EDITING:
+            <li class="info--username">
+              <span class="title"><div class="icon icon-pencil"></div>${_("Edit Profile")} (<a href="${reverse('update_user')}" id="update_user_button">${_("edit")}</a>)</span>
+            </li>
+          % endif
+        % endif
+
         % if third_party_auth.is_enabled():
         <li class="controls--account">
           <span class="title">

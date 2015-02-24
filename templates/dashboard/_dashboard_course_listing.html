@@ -50,6 +50,7 @@ from student.helpers import (
 
     <%
       course_target = reverse('info', args=[course.id.to_deprecated_string()])
+      course_about = reverse('about_course', args=[course.id.to_deprecated_string()])
     %>
 
     % if show_courseware_link:
@@ -128,18 +129,14 @@ from student.helpers import (
         ${_("Course Starts - {start_date}").format(start_date=course.start_datetime_text("DATE_TIME"))}
         % endif
         </p>
-        <h2 class="university">${get_course_about_section(course, 'university')}</h2>
+        <h2 class="university">${course.display_number_with_default | h} </h2>
         <h3>
           % if show_courseware_link:
-             % if not is_course_blocked:
-            <a href="${course_target}">${course.display_number_with_default | h} ${course.display_name_with_default}</a>
-            % else:
-            <a class="disable-look">${course.display_number_with_default | h} ${course.display_name_with_default}</a>
-            % endif
+            <a href="${course_about}">${course.display_name_with_default}</a>
           % else:
-            <span>${course.display_number_with_default | h} ${course.display_name_with_default}</span>
+            <a href="${course_about}">${course.display_name_with_default}</a>
           % endif
-        </h3>
+        </h3>      
       </hgroup>
 
       % if course.may_certify() and cert_status:

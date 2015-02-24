@@ -1,6 +1,9 @@
 <%namespace name='static' file='../static_content.html'/>
 <%!
 from microsite_configuration import microsite
+from django.utils.timezone import UTC
+import pytz
+from datetime import datetime, timedelta
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from courseware.courses import course_image_url, get_course_about_section
@@ -25,8 +28,18 @@ from edxmako.shortcuts import marketing_link
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
   <meta property="og:title" content="${get_course_about_section(course, 'title')}" />
-  <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
+  <meta property="og:description" content="${get_course_about_section(course, 'short_description') | h}" />
 </%block>
+
+   % if course.display_org_with_default == "coursebuilder":
+        <script type="text/javascript">
+            window.onload = function(event) {
+            event.stopPropagation(true);
+            window.stop();
+            window.location.href="http://${course.display_number_with_default}.upvx.es";
+            };
+        </script>
+   % endif
 
 <%block name="js_extra">
 
@@ -128,13 +141,26 @@ from edxmako.shortcuts import marketing_link
             % endif
           </h1>
         </hgroup>
+        <%
+        now = datetime.now(UTC())
+        start = course.enrollment_start or datetime.min.replace(tzinfo=pytz.UTC)
+        end = course.enrollment_end or datetime.max.replace(tzinfo=pytz.UTC)
 
+        canenroll = False
+
+        if start < now < end:
+            canenroll = True
+          %>
         <div class="main-cta">
-        %if user.is_authenticated() and registered:
+        %if course.display_org_with_default.lower() == "edxorg":
+
+          <a href="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" class="toedxorg" onclick="SetCookie('${course.id.to_deprecated_string().replace("/","_")}','True',30);">
+              Este curso se realizará en edx.org
+          </a>
+        %elif user.is_authenticated() and registered:
           %if show_courseware_link:
             <a href="${course_target}">
           %endif
-
           <span class="register disabled">${_("You are registered for this course")}</span>
 
           %if show_courseware_link:
@@ -150,6 +176,9 @@ from edxmako.shortcuts import marketing_link
           <span class="register disabled">
             ${_("Course is full")}
           </span>
+        % elif course.display_org_with_default == "demo":
+
+          <h1>${_("Demo Course")}</h1>
         % elif invitation_only and not can_enroll:
           <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
         ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
@@ -172,6 +201,9 @@ from edxmako.shortcuts import marketing_link
                       cost=registration_price)}
           </a>
           <div id="register_error"></div>
+        % elif course.display_org_with_default == "coursebuilder":
+
+          <h1><a href ="http://${course.display_number_with_default}.upvx.es">${_("Course Builder")}</a></h1>
         %else:
           <a href="#" class="register">
             ${_("Register for {course.display_number_with_default}").format(course=course) | h}
@@ -285,16 +317,16 @@ from edxmako.shortcuts import marketing_link
         </header>
 
         <ol class="important-dates">
-          <li class="important-dates-item"><i class="icon fa fa-info-sign"></i><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
+          <li class="important-dates-item"><i class="icon fa fa-info-sign"></i><p class="important-dates-item-title">${_("Course Number")}:</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
           % if not course.start_date_is_still_default:
-            <li class="important-dates-item"><i class="icon fa fa-calendar"></i><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.start_datetime_text()}</span></li>
+            <li class="important-dates-item"><i class="icon fa fa-calendar"></i><p class="important-dates-item-title">${_("Classes Start")}:</p><span class="important-dates-item-text start-date">${course.start_datetime_text()}</span></li>
           % endif
             ## We plan to ditch end_date (which is not stored in course metadata),
             ## but for backwards compatibility, show about/end_date blob if it exists.
             % if get_course_about_section(course, "end_date") or course.end:
             <li class="important-dates-item">
                 <i class="icon fa fa-calendar"></i>
-                <p class="important-dates-item-title">${_("Classes End")}</p>
+                <p class="important-dates-item-title">${_("Classes End")}:</p>
                 <span class="important-dates-item-text final-date">
                     % if get_course_about_section(course, "end_date"):
                         ${get_course_about_section(course, "end_date")}
@@ -306,10 +338,10 @@ from edxmako.shortcuts import marketing_link
             % endif
 
           % if get_course_about_section(course, "effort"):
-            <li class="important-dates-item"><i class="icon fa fa-pencil"></i><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${get_course_about_section(course, "effort")}</span></li>
+            <li class="important-dates-item"><i class="icon fa fa-pencil"></i><p class="important-dates-item-title">${_("Estimated Effort")}:</p><span class="important-dates-item-text effort">${get_course_about_section(course, "effort")}</span></li>
           % endif
 
-          ##<li class="important-dates-item"><i class="icon fa fa-clock-o"></i><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
+          ##<li class="important-dates-item"><i class="icon fa fa-clock-o"></i><p class="important-dates-item-title">${_('Course Length')}:</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
 
           %if is_shopping_cart_enabled and registration_price:
             <li class="important-dates-item">
@@ -322,14 +354,14 @@ from edxmako.shortcuts import marketing_link
           % if pre_requisite_courses:
           <li class="prerequisite-course important-dates-item">
             <i class="icon fa fa-list-ul"></i>
-            <p class="important-dates-item-title">${_("Prerequisites")}</p>
+            <p class="important-dates-item-title">${_("Prerequisites")}:</p>
             ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
             <span class="important-dates-item-text pre-requisite">${pre_requisite_courses[0]}</span>
             <p class="tip">${_("You must successfully complete {course} before you begin this course").format(course=pre_requisite_courses[0])}.</p>
           </li>
           % endif
           % if get_course_about_section(course, "prerequisites"):
-            <li class="important-dates-item"><i class="icon fa fa-book"></i><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(course, "prerequisites")}</span></li>
+            <li class="important-dates-item"><i class="icon fa fa-book"></i><p class="important-dates-item-title">${_("Requirements")}:</p><span class="important-dates-item-text prerequisites">${get_course_about_section(course, "prerequisites")}</span></li>
           % endif
         </ol>
       </section>

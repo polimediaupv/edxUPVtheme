@@ -11,6 +11,8 @@
 <head dir="${dir_rtl}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Cursos masivos online (MOOC) de la UPV" lang="es-ES">
+    <meta name="keywords" content="mooc, españa, upv, universidad, cursos, masivos, online " lang="es-ES">
     % if responsive:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     % endif
@@ -44,8 +46,9 @@
 ## this needs to be here to prevent the title from mysteriously appearing in the body, in one case
 <%def name="pagetitle()" />
   <%block name="title">
-      <title>
-       ${page_title_breadcrumbs(self.pagetitle())}
+      <title>MOOC
+       UPV[X] plataforma de cursos masivos online de la UPV
+       ##${page_title_breadcrumbs(self.pagetitle())}
       </title>
   </%block>
 

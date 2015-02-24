@@ -35,12 +35,6 @@
 
   <header class="search">
     <div class="inner-wrapper main-search">
-      <hgroup>
-        <div class="logo">
-          <img src="${logo_file}" alt="${logo_alt_text}" />
-        </div>
-        <h2>${course_index_overlay_text}</h2>
-      </hgroup>
     </div>
   </header>
 
@@ -53,6 +47,22 @@
         </li>
         %endfor
       </ul>
+      <script type="text/javascript">
+                $(".edxorglink").unbind().click(function(event) {
+                    event.preventDefault();
+                    console.log("adsfa");
+                    if (checkCookie(this.attributes['courseid'].value) == "True")
+                    {
+                        window.location.href=this.attributes['edxorg'].value;
+                    }
+                    else
+                    {
+                        SetCookie(this.attributes['courseid'].value,"True",30);
+                        window.location.href=this.attributes['local'].value
+                    }
+                    return false;
+                  });
+      </script>
     </section>
   </section>
 
