@@ -120,13 +120,13 @@ from student.helpers import (
       <hgroup>
         <p class="date-block">
         % if course.has_ended():
-        ${_("Course Completed - {end_date}").format(end_date=course.end_datetime_text("DATE_TIME"))}
+        ${_("Course Completed - {end_date}").format(end_date=course.end_datetime_text("SHORT_DATE"))}
         % elif course.has_started():
-        ${_("Course Started - {start_date}").format(start_date=course.start_datetime_text("DATE_TIME"))}
+        ${_("Course Started - {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}
         % elif course.start_date_is_still_default: # Course start date TBD
         ${_("Course has not yet started")}
         % else:   # hasn't started yet
-        ${_("Course Starts - {start_date}").format(start_date=course.start_datetime_text("DATE_TIME"))}
+        ${_("Course Starts - {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}
         % endif
         </p>
         <h2 class="university">${course.display_number_with_default | h} </h2>
