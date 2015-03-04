@@ -206,7 +206,7 @@ from edxmako.shortcuts import marketing_link
           <h1><a href ="http://${course.display_number_with_default}.upvx.es">${_("Course Builder")}</a></h1>
         %else:
           <a href="#" class="register">
-            ${_("Register for {course.display_number_with_default}").format(course=course) | h}
+            ${_("Register for {course_name}").format(course_name=course.display_number_with_default) | h}
           </a>
           <div id="register_error"></div>
         %endif
@@ -276,7 +276,7 @@ from edxmako.shortcuts import marketing_link
 
                 # Translators: This text will be automatically posted to the student's
                 # Twitter account. {url} should appear at the end of the text.
-                tweet_text = _("I just registered for {number} {title} through {account}: {url}").format(
+                tweet_text = _("Acabo de registrarme en el curso {title} de {account}: {url}").format(
                     number=course.number,
                     title=get_course_about_section(course, 'title'),
                     account=microsite.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
@@ -290,8 +290,8 @@ from edxmako.shortcuts import marketing_link
                 facebook_link = microsite.get_value('course_about_facebook_link', settings.PLATFORM_FACEBOOK_ACCOUNT)
 
                 email_subject = u"mailto:?subject={subject}&body={body}".format(
-                    subject=_("Take a course with {platform} online").format(platform=platform_name),
-                    body=_("I just registered for {number} {title} through {platform} {url}").format(
+                    subject=_("Realiza un curso online con {platform}").format(platform=platform_name),
+                    body=_("Acabo de registrarme en el curso {title} de {platform}: {url}").format(
                         number=course.number,
                         title=get_course_about_section(course, 'title'),
                         platform=platform_name,

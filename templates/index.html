@@ -44,7 +44,8 @@
                 future = sorted(future, key=lambda course: course.start)
                 past = sorted(past, key=lambda course: course.start,reverse=True)
                 reordered = future + past
-
+                if len(reordered) > 9:
+                        reordered = reordered[0:9]
             %>
 
             %for course in reordered:
@@ -55,6 +56,9 @@
                 % endif
             %endfor
             </ul>
+	    <div style="text-align:right">
+                <a href="/courses" style="font-size:18px" title="Ver todos los cursos">Ver todos los cursos ></a>
+            </div>
             <script type="text/javascript">
                 $(".edxorglink").unbind().click(function(event) {
                     event.preventDefault();

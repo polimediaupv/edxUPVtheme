@@ -18,16 +18,20 @@ header.global {
     z-index: 100;
 }
 
+header.global nav {
+    padding: 5px 8px 0;
+}
+
 header.global h1.logo {
-    margin: -12px 39px 0px 0px;
+    margin: 12px 39px 0px 9px;
+}
+
+header.global .nav-courseware {
+    margin-top: 22px;
 }
 
 header.global .nav-courseware li .cta {
     background: #333333;
-}
-
-header.global ol.user {
-    margin-top: -20px;
 }
 
 header.global.slim {
@@ -38,12 +42,12 @@ header.global.slim {
    background: rgba(255,255,255,1);
 }
 
-header.global.slim .nav-global {
-  margin-top: 0px;
+header.global.slim h1.logo {
+   margin: 6px 39px 0px 9px;
 }
 
-header.global.slim ol.user {
-   margin-top: 3px;
+header.global .user .primary a {
+   height: 27px;
 }
 
 .content-wrapper {
@@ -177,10 +181,6 @@ nav.course-material ol.course-tabs li a.active {
     width: 950px;
 }
 
-header.global.slim ol.user.in_course {
-   margin-top: -10px;
-}
-
 .view-register header.global nav, .view-login header.global nav {
     width:920px;
 }
@@ -242,13 +242,16 @@ li.courses-listing-item {
 }
 
 .course-info .course-sidebar {
-    padding-right: 10px;
     width: 32%;
     float: right;
 }
 
 .course-info header.course-profile{
     margin-top: 0px;
+}
+
+.course-info .container nav, .course-info section.outside-app nav {
+    margin: 37px 0;
 }
 
 div.info-wrapper section.updates{
@@ -291,6 +294,9 @@ nav.course-material ol.course-tabs li a.new-post-asic{
 
 .course-info header.course-profile{
     background-image: url("/static/themes/default/images/about-bg.jpg");
+}
+
+.course-info header.course-profile{
 }
 
 form.choicegroup label {
