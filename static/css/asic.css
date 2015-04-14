@@ -65,6 +65,7 @@ header.global .user .primary a {
     width: 950px;
     border-bottom: 0px;
     margin-top: 0px;
+    background-image: url("/static/themes/default/images/homepage-bg.jpg"); 
 }
 
 .wrapper-footer {
