@@ -467,5 +467,19 @@ div.cookies-paragraph-asic{
     margin-bottom: 40px;
 }
 
+.courses-listing li {
+    display:none;
+}
 
+#loadMore {
+    color:red;
+    cursor:pointer;
+}
 
+#loadMore:hover {
+    text-decoration: underline;
+}
+
+#loadMore::after{
+    content: " >";
+}

@@ -44,8 +44,6 @@
                 future = sorted(future, key=lambda course: course.start)
                 past = sorted(past, key=lambda course: course.start,reverse=True)
                 reordered = future + past
-                if len(reordered) > 9:
-                        reordered = reordered[0:9]
             %>
 
             %for course in reordered:
@@ -56,8 +54,8 @@
                 % endif
             %endfor
             </ul>
-	    <div style="text-align:right">
-                <a href="/courses" style="font-size:18px" title="Ver todos los cursos">Ver todos los cursos ></a>
+	    <div id="loadMore" style="text-align:right; font-size:18px;">
+                 Ver más cursos
             </div>
             <script type="text/javascript">
                 $(".edxorglink").unbind().click(function(event) {
@@ -74,7 +72,27 @@
                     }
                     return false;
                   });
-            </script>        
+            </script>
+            <script>
+               $(window).load(function() {
+                 size_li=$('.courses-listing li').size();
+                 console.log(size_li);
+                 x=9;
+                 console.log(x);
+                 $('.courses-listing li:lt('+x+')').show();
+                 if(x>=size_li) {
+                    $('#loadMore').hide();
+                 }
+                 $('#loadMore').click(function() {
+                   x=(x+3 <= size_li) ?  x+3: size_li;
+                   console.log(x);
+                   $('.courses-listing li:lt('+x+')').show();
+                   if(x==size_li) {
+                      $('#loadMore').hide()
+                   }
+                  });
+                 });
+               </script>
         </section>
       % endif
 
@@ -92,6 +110,7 @@
       })
    </script>
 </%block>
+
 
 % if show_signup_immediately is not UNDEFINED:
   ## NOTE: This won't work in production, because anonymous views are cached, so it will
