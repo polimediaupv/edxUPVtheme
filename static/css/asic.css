@@ -171,8 +171,8 @@ header.global .user .primary a {
     width: 950px;
 }
 
-.view-register header.global nav, .view-login header.global nav {
-    width:920px;
+.view-register header.global nav, .view-login header.global nav, .view-passwordreset header.global nav {
+    width:934px;
 }
 
 .dashboard .my-courses .course .info>hgroup h3 a{
