@@ -195,6 +195,13 @@ header.global .user .primary a {
     margin-top: 0px;
 }
 
+.find-courses.nivelacion header.search {
+    background-image: url("/static/themes/default/images/cabeceranivelacion1-2-b.jpg");
+    background-position: inherit;
+    height: 199px;
+    margin-top: 0px;
+}
+
 .highlighted-courses .courses .course, .find-courses .courses .course {
     background: #fbfbfb;
     border: none;
