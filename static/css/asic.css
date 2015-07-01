@@ -301,9 +301,6 @@ form.choicegroup label {
     float: none;
 }
 
-form label{
-    display: flex;
-}
 
 a.toedxorg{
     width: 80%;
