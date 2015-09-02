@@ -3,10 +3,28 @@
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from courseware.courses import course_image_url, get_course_about_section
+from django.utils.timezone import UTC
+import pytz
+from django.utils import timezone
+import datetime
+from datetime import datetime as dt
 %>
 <%page args="course" />
 <article id="${course.id | h}" class="course">
-  %if course.is_newish:
+<%
+                  now = dt.now(UTC())
+                  start = course.enrollment_start or dt.min.replace(tzinfo=pytz.UTC)
+                  end = course.enrollment_end or dt.max.replace(tzinfo=pytz.UTC)
+
+                  canenroll = False
+
+                  if start < now < end:
+                     canenroll = True
+                  endif
+%>
+  %if course.end < timezone.now() and canenroll:
+    <span class="status">${_("Archivado")}</span>
+  %elif course.is_newish:
     <span class="status">${_("New")}</span>
   %endif
   %if course.display_org_with_default.lower() == "coursebuilder":

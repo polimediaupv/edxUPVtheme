@@ -1,8 +1,11 @@
 <%! 
   from django.utils.translation import ugettext as _
   from microsite_configuration import microsite
+  from django.utils.timezone import UTC
+  import pytz
   from django.utils import timezone
   import datetime
+  from datetime import datetime as dt
 %>
 <%inherit file="../main.html" />
 
@@ -46,22 +49,53 @@
 	    <%
                 future=[]
                 past=[]
+                current=[]
+                archived=[]
+                closed=[]
                 reordered=[]
                 for course in courses:
+                    now = dt.now(UTC())
+                    start = course.enrollment_start or dt.min.replace(tzinfo=pytz.UTC)
+                    end = course.enrollment_end or dt.max.replace(tzinfo=pytz.UTC)
+
+                    canenroll = False
+
+                    if start < now < end:
+                        canenroll = True
+                    endif
+
+
                     if course.end == None:
                         course.end = timezone.now() + datetime.timedelta(days=1)
                     if course.start > timezone.now():
                         future.append(course)
+                    elif course.end > timezone.now():
+                        current.append(course)
+                    elif canenroll:
+                        archived.append(course)
                     else:
-                        past.append(course)
+                        closed.append(course)
                 future = sorted(future, key=lambda course: course.start)
-                past = sorted(past, key=lambda course: course.start,reverse=True)
-                reordered = future + past
+                current = sorted(current, key=lambda course: course.start,reverse=True)
+                archived = sorted(archived, key=lambda course: course.start, reverse=True)
+                closed = sorted(closed, key=lambda course: course.start, reverse=True)
+                reordered = future + current + archived + closed
 
             %>
 
 	%for course in reordered:
-		% if course.display_org_with_default.lower() != "poc" and course.end >= timezone.now() :
+<%
+		  now = dt.now(UTC())
+        	  start = course.enrollment_start or dt.min.replace(tzinfo=pytz.UTC)
+        	  end = course.enrollment_end or dt.max.replace(tzinfo=pytz.UTC)
+
+        	  canenroll = False
+
+                  if start < now < end:
+                     canenroll = True
+                  endif
+%>
+		% if course.display_org_with_default.lower() != "poc" and canenroll :
                        <li class="courses-listing-item">
                                <%include file="../course.html" args="course=course" />
                        </li>
