@@ -30,7 +30,13 @@ from datetime import datetime as dt
   %if course.display_org_with_default.lower() == "coursebuilder":
     <a href="http://${course.display_number_with_default}.upvx.es">
   %elif course.display_org_with_default.lower() == "edxorg" :
-    <a href="" courseid='${course.id.to_deprecated_string().replace("/","_")}' edxorg="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" local="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="edxorglink">
+    %if '...' in course.id.to_deprecated_string():
+         
+            <a href="" courseid='${course.id.to_deprecated_string().replace('...','').replace("/","_")}' edxorg="https://www.edx.org/course/${course.display_number_with_default.replace('...','')}-upvalenciax-${course.location.run}" local="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="edxorglink">
+    %else:
+            <a href="" courseid='${course.id.to_deprecated_string().replace("/","_")}' edxorg="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" local="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="edxorglink">
+    %endif
+
   %else:
     <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
   %endif

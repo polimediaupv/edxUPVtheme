@@ -154,7 +154,7 @@ from edxmako.shortcuts import marketing_link
         <div class="main-cta">
         %if course.display_org_with_default.lower() == "edxorg":
 
-          <a href="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" class="toedxorg" onclick="SetCookie('${course.id.to_deprecated_string().replace("/","_")}','True',30);">
+          <a href="https://www.edx.org/course/${course.display_number_with_default.replace('...','')}-upvalenciax-${course.location.run}" class="toedxorg" onclick="SetCookie('${course.id.to_deprecated_string().replace('...','').replace("/","_")}','True',30);">
               Este curso se realizará en edx.org
           </a>
         %elif user.is_authenticated() and registered:
