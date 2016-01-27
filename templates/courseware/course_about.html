@@ -126,6 +126,7 @@ from edxmako.shortcuts import marketing_link
   <script src="${static.url('js/course_info.js')}"></script>
 </%block>
 
+
 <%block name="pagetitle">${get_course_about_section(course, "title")}</%block>
 
 <section class="course-info">
@@ -230,6 +231,14 @@ from edxmako.shortcuts import marketing_link
     </div>
       </div>
   </header>
+
+<script type="text/javascript">
+    var userLang = navigator.languages[0] || navigator.userLanguage;
+    console.log(userLang);
+    if (userLang.split('-')[0] === "en") {
+        $(".toedxorg").text("This course will be held in edx.org");
+    }
+</script>
 
   <section class="container">
     <section class="details">
