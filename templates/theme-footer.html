@@ -1,7 +1,7 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
-<link rel="stylesheet" type="text/css" href="${static.url('themes/default/css/asic.css')}" />
+<link rel="stylesheet" type="text/css" href="${static.url('/static/css/asic.css')}" />
 <%namespace name='static' file='/static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 <%! from datetime import datetime %>
@@ -162,9 +162,9 @@
 <div class="wrapper wrapper-footer">
 
   <div id="DIVsepPie1">
-     <img alt="-" src="${static.url('themes/default/images/GRi.png')}" style="float:left;width:773px;height:3px;">
+     <img alt="-" src="${static.url('/static/images/GRi.png')}" style="float:left;width:773px;height:3px;">
   </div>
-  <footer>
+  <footer id="footer-openedx">
     <div class="colophon">
       <nav class="nav-colophon">
       <ol>
@@ -188,7 +188,7 @@
 
       <div>
           <a href="http://openedx.org" id="poweredbyopenedx">
-            <img src="${static.url('themes/default/images/edx-openedx-logo-tag-light.png')}" width="150" height="50" alt="Powered by Open edX" />
+            <img src="${static.url('/static/images/edx-openedx-logo-tag-light.png')}" width="150" height="50" alt="Powered by Open edX" />
           </a>
       </div>
     </div>
@@ -223,8 +223,10 @@
 
         <nav class="nav-legal" style="text-align:right">
           <ul>
-            <li class="nav-legal-02">
-              <a href="${marketing_link('TOS')}">${_("Terms of Service and Honor Code")}</a>
+            <li class="nav-legal-01">
+              
+              <a href="/tos">Terms of Service</a> and <a href="/tos#honor">Honor Code</a>
+              
             </li>
           </ul>
         </nav>

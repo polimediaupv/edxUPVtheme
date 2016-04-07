@@ -1,75 +1,56 @@
-<%! from django.utils.translation import ugettext as _ %>
-<%! from django.utils import timezone %>
-<%! import datetime %>
+<%!
+  import json
+  from django.utils.translation import ugettext as _
+  from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
 <%inherit file="../main.html" />
+<%
+  course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
+%>
 
 <%namespace name='static' file='../static_content.html'/>
 
+% if course_discovery_enabled:
+<%block name="header_extras">
+  % for template_name in ["course_card", "filter_bar", "filter", "facet", "facet_option"]:
+  <script type="text/template" id="${template_name}-tpl">
+      <%static:include path="discovery/${template_name}.underscore" />
+  </script>
+  % endfor
+  <%static:require_module module_name="js/discovery/discovery_factory" class_name="DiscoveryFactory">
+    DiscoveryFactory(
+      ${course_discovery_meanings | n, dump_js_escaped_json},
+      getParameterByName('search_query')
+    );
+  </%static:require_module>
+</%block>
+% endif
+
 <%block name="pagetitle">${_("Courses")}</%block>
-<%! from microsite_configuration import microsite %>
 
 <section class="find-courses">
-
-<%
-  course_index_overlay_text = microsite.get_value('course_index_overlay_text', _("Explore free courses from leading universities."))
-
-  # not sure why this is, but if I use static.url('images/edx_bw.png') then the HTML rendering
-  # of this template goes wonky
-
-  logo_file = microsite.get_value(
-    'course_index_overlay_logo_file', settings.STATIC_URL + 'images/edx_bw.png')
-%>
-
-  <header class="search">
-    <div class="inner-wrapper main-search">
+  <section class="courses-container">
+    % if course_discovery_enabled:
+    <div id="discovery-form" role="search" aria-label="course" class="wrapper-search-context">
+      <div id="discovery-message" class="search-status-label"></div>
+      
     </div>
-  </header>
 
-  <section class="container">
-    <section class="courses">
-      <ul class="courses-listing">
+    <div id="filter-bar" class="filters hide-phone is-collapsed">
+    </div>
+    % endif
 
-	    <%
-                future=[]
-                past=[]
-                reordered=[]
-                for course in courses:
-                    if course.end == None:
-                        course.end = timezone.now() + datetime.timedelta(days=1)
-                    if course.start > timezone.now():
-                        future.append(course)
-                    else:
-                        past.append(course)
-                future = sorted(future, key=lambda course: course.start)
-                past = sorted(past, key=lambda course: course.start,reverse=True)
-                reordered = future + past
-
-            %>
-
-            %for course in reordered: 
-		% if course.display_org_with_default.lower() != "poc" and course.end >= timezone.now() :
-			<li class="courses-listing-item">
-				<%include file="../course.html" args="course=course" />
-			</li>
-		% endif
-            %endfor
+    <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}">
+      <ul class="courses-listings">
+	      patata
+	    ${courses}  
+        %for course in courses:
+        <li class="courses-listing-iteming">
+        <!-- no esta leyendo de aqui el find courses de los huevos cuando vuelvas de vacaciones lo buscas con el pycharm-->
+          <%include file="course.html" args="course=course" />
+        </li>
+        %endfor
       </ul>
-      <script type="text/javascript">
-                $(".edxorglink").unbind().click(function(event) {
-                    event.preventDefault();
-                    console.log("adsfa");
-                    if (checkCookie(this.attributes['courseid'].value) == "True")
-                    {
-                        window.location.href=this.attributes['edxorg'].value;
-                    }
-                    else
-                    {
-                        SetCookie(this.attributes['courseid'].value,"True",30);
-                        window.location.href=this.attributes['local'].value
-                    }
-                    return false;
-                  });
-      </script>
-    </section>
+    </div>
   </section>
 </section>

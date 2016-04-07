@@ -24,7 +24,7 @@
   % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
     <article class="course ${enrollment.mode}">
   % else:
-    <article class="course">
+    <dashboardarticle class="course">
   %endif
     <%
       course_target = reverse('info', args=[course.id.to_deprecated_string()])

@@ -2,47 +2,42 @@
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
-from courseware.courses import course_image_url, get_course_about_section
 %>
 <%page args="course" />
 
-<article id="${course.id.to_deprecated_string()}" class="course">
-  %if course.is_newish:
-    <span class="status">${_("New")}</span>
-  %endif
-
-  %if course.display_org_with_default.lower() == "coursebuilder":
+<article id="${course.id | h}" class="course">
+ % if course.display_org_with_default.lower() == "coursebuilder":
     <a href="http://${course.display_number_with_default}.upvx.es">
-  %elif course.display_org_with_default.lower() == "edxorg" :
-    <a href="" courseid='${course.id.to_deprecated_string().replace("/","_")}' edxorg="https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}" local="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="edxorglink">
-  %else:
-    <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
-  %endif
+ % else:
+  <a href="adsfadsfadsf">
+ % endif
+ 
 
+  
   <div class="inner-wrapper">
       <header class="course-preview">
         <hgroup>
-          <h2>${get_course_about_section(course, 'title')}</h2>
+          <h2>${course.display_name_with_default_escaped} </h2>
         </hgroup>
         <div class="info-link">&#x2794;</div>
       </header>
       <section class="info">
         <div class="cover-image">
-          <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${get_course_about_section(course, 'title')} Cover Image" />
+          <img src="${course.course_image_url | h}" alt="cover image" />
         </div>
         <div class="desc">
-          <p>${get_course_about_section(course, 'short_description')}</p>
+          <p>short desc</p>
         </div>
         <div class="bottom">
-          <span class="university">${get_course_about_section(course, 'university')}</span>
+          <span class="university">${course.display_org_with_default | h}</span>
           % if not course.start_date_is_still_default:
-          <span class="start-date">${course.start_date_text}</span>
+          <span class="start-date">${course.start_datetime_text()}</span>
           % endif
         </div>
       </section>
     </div>
     <div class="meta-info">
-      <p class="university">${get_course_about_section(course, 'university')}</p>
+      <p class="university">${course.display_org_with_default | h}</p>
     </div>
   </a>
 </article>
