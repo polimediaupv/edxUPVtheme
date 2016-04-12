@@ -72,6 +72,10 @@ header.global.slim ol.user {
     width: 64.5%;
 }
 
+.courses-container .courses{
+	width:100% !important;
+}
+
 li.courses-listing-item {
     border: none;
     border-radius: 8px;
@@ -133,6 +137,19 @@ a:hover,a:visited,.wrapper-footer footer a:focus,.wrapper-footer footer a:active
    height: 280px;
    padding-top: 50px;
    width: 950px;
+}
+
+.home-bg-title{
+	font-size: 1.5em;
+    padding-left: 20px;
+    padding-top: 30px;
+    }
+
+.home-bg-body{
+	padding-left: 20px;
+    font-size: 1.2em;
+    width: 50%;
+    color: gray;
 }
 
 .course-info header.course-profile .intro-inner-wrapper {
@@ -248,7 +265,7 @@ header.global.slim ol.user.in_course {
     padding: 25px 15px 15px;
 }
 
-.find-courses header.search {
+.findheader {
     background-image: url("/static/images/find-courses-bg.jpg");
     background-position: inherit;
     height: 199px;
