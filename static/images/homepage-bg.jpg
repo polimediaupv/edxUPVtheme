@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=1020">
     
     
-    <title>edxUPVtheme/favicon.ico at birch_theme · polimediaupv/edxUPVtheme · GitHub</title>
+    <title>edxUPVtheme/homepage-bg.jpg at birch_theme · polimediaupv/edxUPVtheme · GitHub</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -55,7 +55,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="9E2A09EE:4D5F:11535C83:570CF18D" name="octolytics-dimension-request_id" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="9E2A09EE:4D5F:115280C3:570CF116" name="octolytics-dimension-request_id" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -68,12 +68,12 @@
     <meta name="user-login" content="">
 
         <meta name="expected-hostname" content="github.com">
-      <meta name="js-proxy-site-detection-payload" content="ZWEyZjdmMWNjZmRmYjhmM2U0YmM3ZDAwYjUyNzU4ZjM2YzY0YTIxNjQyMDlmYWUwMDcwYzYyNDM1MjViYjAyYXx7InJlbW90ZV9hZGRyZXNzIjoiMTU4LjQyLjkuMjM4IiwicmVxdWVzdF9pZCI6IjlFMkEwOUVFOjRENUY6MTE1MzVDODM6NTcwQ0YxOEQiLCJ0aW1lc3RhbXAiOjE0NjA0NjYwNjF9">
+      <meta name="js-proxy-site-detection-payload" content="MzBmNDlmZGEwNGM2OTU3NDU3ZWRjZjhlNDI4MTEwMTA0ZTY3ZDFkMTE5MTY1ODliMGY5OWQ1MTFjMWVjM2VmMHx7InJlbW90ZV9hZGRyZXNzIjoiMTU4LjQyLjkuMjM4IiwicmVxdWVzdF9pZCI6IjlFMkEwOUVFOjRENUY6MTE1MjgwQzM6NTcwQ0YxMTYiLCJ0aW1lc3RhbXAiOjE0NjA0NjU5NDJ9">
 
       <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
       <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
 
-    <meta content="fdc6792e7a2eb9bdd8cc3e67468cc2d7983e18c3" name="form-nonce" />
+    <meta content="52199e672c97548039613b3fc5b9a9c442b256be" name="form-nonce" />
 
     <meta http-equiv="x-pjax-version" content="df55a800d185e7349d6de8d47b579466">
     
@@ -86,7 +86,7 @@
   <link href="https://github.com/polimediaupv/edxUPVtheme/commits/birch_theme.atom" rel="alternate" title="Recent Commits to edxUPVtheme:birch_theme" type="application/atom+xml">
 
 
-      <link rel="canonical" href="https://github.com/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/favicon.ico" data-pjax-transient>
+      <link rel="canonical" href="https://github.com/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/homepage-bg.jpg" data-pjax-transient>
   </head>
 
 
@@ -124,7 +124,7 @@
 
       <div class="site-header-actions">
             <a class="btn btn-primary site-header-actions-btn" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
-          <a class="btn site-header-actions-btn mr-2" href="/login?return_to=%2Fpolimediaupv%2FedxUPVtheme%2Fblob%2Fbirch_theme%2Fstatic%2Fimages%2Ffavicon.ico" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+          <a class="btn site-header-actions-btn mr-2" href="/login?return_to=%2Fpolimediaupv%2FedxUPVtheme%2Fblob%2Fbirch_theme%2Fstatic%2Fimages%2Fhomepage-bg.jpg" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
       </div>
 
         <nav class="site-header-nav site-header-nav-secondary">
@@ -274,9 +274,9 @@
 
     
 
-<a href="/polimediaupv/edxUPVtheme/blob/e0d915571e2823e9fa486b172e60d1ba52681023/static/images/favicon.ico" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/polimediaupv/edxUPVtheme/blob/e0d915571e2823e9fa486b172e60d1ba52681023/static/images/homepage-bg.jpg" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:9373e2c4ff9e30367fb81f505447613d -->
+<!-- blob contrib key: blob_contributors:v21:b3984ce73cbf2c1c0d180677e0deff82 -->
 
 <div class="file-navigation js-zeroclipboard-container">
   
@@ -318,7 +318,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/polimediaupv/edxUPVtheme/blob/UPV_ident_visual_corporativa/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/UPV_ident_visual_corporativa/static/images/homepage-bg.jpg"
                data-name="UPV_ident_visual_corporativa"
                data-skip-pjax="true"
                rel="nofollow">
@@ -328,7 +328,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/homepage-bg.jpg"
                data-name="birch_theme"
                data-skip-pjax="true"
                rel="nofollow">
@@ -338,7 +338,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/polimediaupv/edxUPVtheme/blob/dogwood/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/dogwood/static/images/homepage-bg.jpg"
                data-name="dogwood"
                data-skip-pjax="true"
                rel="nofollow">
@@ -348,7 +348,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/polimediaupv/edxUPVtheme/blob/master/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/master/static/images/homepage-bg.jpg"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -358,7 +358,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/polimediaupv/edxUPVtheme/blob/paginating/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/paginating/static/images/homepage-bg.jpg"
                data-name="paginating"
                data-skip-pjax="true"
                rel="nofollow">
@@ -368,7 +368,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/polimediaupv/edxUPVtheme/blob/rc3_theme/static/images/favicon.ico"
+               href="/polimediaupv/edxUPVtheme/blob/rc3_theme/static/images/homepage-bg.jpg"
                data-name="rc3_theme"
                data-skip-pjax="true"
                rel="nofollow">
@@ -405,11 +405,11 @@
     <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
   </div>
   <div class="breadcrumb js-zeroclipboard-target">
-    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme"><span>edxUPVtheme</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme/static"><span>static</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme/static/images"><span>images</span></a></span><span class="separator">/</span><strong class="final-path">favicon.ico</strong>
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme"><span>edxUPVtheme</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme/static"><span>static</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/polimediaupv/edxUPVtheme/tree/birch_theme/static/images"><span>images</span></a></span><span class="separator">/</span><strong class="final-path">homepage-bg.jpg</strong>
   </div>
 </div>
 
-<include-fragment class="commit-tease" src="/polimediaupv/edxUPVtheme/contributors/birch_theme/static/images/favicon.ico">
+<include-fragment class="commit-tease" src="/polimediaupv/edxUPVtheme/contributors/birch_theme/static/images/homepage-bg.jpg">
   <div>
     Fetching contributors&hellip;
   </div>
@@ -424,12 +424,12 @@
   <div class="file-actions">
 
     <div class="btn-group">
-      <a href="/polimediaupv/edxUPVtheme/raw/birch_theme/static/images/favicon.ico" class="btn btn-sm " id="raw-url">Raw</a>
-      <a href="/polimediaupv/edxUPVtheme/commits/birch_theme/static/images/favicon.ico" class="btn btn-sm " rel="nofollow">History</a>
+      <a href="/polimediaupv/edxUPVtheme/raw/birch_theme/static/images/homepage-bg.jpg" class="btn btn-sm " id="raw-url">Raw</a>
+      <a href="/polimediaupv/edxUPVtheme/commits/birch_theme/static/images/homepage-bg.jpg" class="btn btn-sm " rel="nofollow">History</a>
     </div>
 
 
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/polimediaupv/edxUPVtheme/delete/birch_theme/static/images/favicon.ico" class="inline-form" data-form-nonce="fdc6792e7a2eb9bdd8cc3e67468cc2d7983e18c3" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ERa3pZPA8bKjd3D1o7SVgaTOTRcHoJMrmqXbN5iAE39ruy3k/PNBHGqlpwnL3mLj9cGo8tU/J/Tnb64j4AnZrw==" /></div>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/polimediaupv/edxUPVtheme/delete/birch_theme/static/images/homepage-bg.jpg" class="inline-form" data-form-nonce="52199e672c97548039613b3fc5b9a9c442b256be" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="FlSnd5NX/iKw61XjGlKD0c5/rvsyYzedVqsZS52SlS7yGsQDXkY7pr7m6UegNMD32v1fHBtd+9vzH/DkuyuJiw==" /></div>
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="You must be signed in to make or propose changes" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M10 2H8c0-0.55-0.45-1-1-1H4c-0.55 0-1 0.45-1 1H1c-0.55 0-1 0.45-1 1v1c0 0.55 0.45 1 1 1v9c0 0.55 0.45 1 1 1h7c0.55 0 1-0.45 1-1V5c0.55 0 1-0.45 1-1v-1c0-0.55-0.45-1-1-1z m-1 12H2V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9z m1-10H1v-1h9v1z"></path></svg>
@@ -437,7 +437,9 @@
 </form>  </div>
 
   <div class="file-info">
-    1.77 KB
+      <span class="file-mode" title="File mode">executable file</span>
+      <span class="file-info-divider"></span>
+    77 KB
   </div>
 </div>
 
@@ -445,7 +447,7 @@
 
   <div itemprop="text" class="blob-wrapper data type-text">
       <div class="image">
-          <a href="/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/favicon.ico?raw=true">View Raw</a>
+          <span class="border-wrap"><img src="/polimediaupv/edxUPVtheme/blob/birch_theme/static/images/homepage-bg.jpg?raw=true" alt="homepage-bg.jpg"></span>
       </div>
   </div>
 
@@ -484,7 +486,7 @@
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2016 <span title="0.07663s from github-fe154-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2016 <span title="0.04224s from github-fe151-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
