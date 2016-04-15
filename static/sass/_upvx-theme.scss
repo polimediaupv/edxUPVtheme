@@ -211,15 +211,60 @@ html {
 //-----------------
 // Header Styling
 //-----------------
-.home>header {
-    height: 199px;
-    width: 950px;
+header.global {
+    max-width:950px;
+    height: 105px !important;
+    margin: 0 auto;
     border-bottom: 0px;
-    margin-top: 0px;
+    box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1) !important;
+    background: #ffffff !important;
+    z-index: 100;
+}
 
-    .outer-wrapper {
-        padding: 120px 0 !important;
-    }
+header.global h1.logo {
+    margin: -12px 39px 0px 0px;
+}
+
+header.global .nav-courseware li .cta {
+    background: #333333;
+}
+
+header.global ol.user {
+    margin-top: -20px;
+}
+
+header.global.slim {
+   box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1);   
+   padding: 0px 0 0px 0;
+   height: 69px;
+   border-bottom: 1px solid gray;
+   background: rgba(255,255,255,1);
+}
+
+header.global.slim .nav-global {
+  margin-top: 0px;
+}
+
+header.global.slim ol.user {
+   margin-top: 3px;
+}
+
+#DIVsep1 {
+    width: 950px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #CC0000;
+    height: 10px;
+}
+
+.content-wrapper {
+    width: 950px !important;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
+    padding-bottom: 0px;
+}
+
+.home {
+    background-color: #ffffff;
 }
 
 //-----------------
@@ -256,6 +301,11 @@ html {
     .copyright {
         clear: both;
     }
+}
+
+#DIVsepPie1 {
+    height: 3px;
+    background-color: #CC0000;
 }
 
 //-----------------
