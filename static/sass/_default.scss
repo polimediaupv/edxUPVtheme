@@ -222,7 +222,11 @@ header.global {
 }
 
 header.global h1.logo {
-    margin: -12px 39px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+header.global nav {
+    padding: 10px 3px 0;
 }
 
 header.global .nav-courseware li .cta {
@@ -267,40 +271,23 @@ header.global.slim ol.user {
     background-color: #ffffff;
 }
 
+.home>header {
+    height: 199px;
+}
+
 //-----------------
 // Footer Styling
 //-----------------
 .wrapper-footer {
-    padding: 0px 0px 25px 0px;
+    padding: 0px 0px 25px 0px !important;
     max-width: 950px;
-    margin: 0 auto;
-    box-shadow: 0 6px 3px 3px rgba(0,0,0,0.1);
+    margin: 0 auto !important;
+    box-shadow: 0 6px 3px 3px rgba(0,0,0,0.1) !important;
+}
 
-    footer {
-        max-width: 95%;
-        margin-top: 10px;
-
-        .colophon {
-            width: 80%;
-            float: left;
-
-            .nav-colophon li {
-                display: inline-block;
-                height: 35px;
-                float: left;
-                margin: 0 20px 20px 0;
-            }
-        }
-
-        .references {
-            width: 15%;
-            float: right;
-        }
-    }
-
-    .copyright {
-        clear: both;
-    }
+.wrapper-footer footer {
+    max-width: 95%;
+    margin-top: 10px;
 }
 
 #DIVsepPie1 {
