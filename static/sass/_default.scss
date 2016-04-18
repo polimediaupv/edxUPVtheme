@@ -222,11 +222,11 @@ header.global {
 }
 
 header.global h1.logo {
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px !important;
 }
 
 header.global nav {
-    padding: 10px 3px 0;
+    padding: 10px 3px 0 !important;
 }
 
 header.global .nav-courseware li .cta {
