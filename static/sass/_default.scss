@@ -353,13 +353,14 @@ li.courses-listing-item {
 }
 
 .course-info header.course-profile .intro-inner-wrapper {
-   max-width: 95%;
+   max-width: 95% !important;
+   margin-top: 40px !important;
 }
 
 .course-info .details {
-   margin-left: 1.5%;
-   margin-right: 1.5%;
-   width: 64.79964%;
+   margin-left: 1.5% !important;
+   margin-right: 1.5% !important;
+   width: 64.79964% !important;
 }
 
 .course-info .course-sidebar {
@@ -370,6 +371,18 @@ li.courses-listing-item {
 
 .course-info header.course-profile{
     margin-top: 0px;
+}
+
+.course-info .container nav, .course-info section.outside-app nav {
+    border-bottom: 1px solid #acacac !important;
+}
+
+.course-info .course-sidebar>section.course-summary {
+   border: 1px solid #acacac !important;
+}
+ 
+.course-info .course-sidebar>section {
+    border: 1px solid #acacac !important;
 }
 
 //-----------------
@@ -387,6 +400,8 @@ li.courses-listing-item {
 
 .wrapper-footer footer {
     max-width: 95%;
+    padding-top: 10px;
+    margin: 0 auto;
 }
 
 #DIVsepPie1 {
