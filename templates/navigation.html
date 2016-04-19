@@ -146,11 +146,18 @@ site_status_msg = get_site_status_msg(course_id)
             <a class="cta cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">${_("Register")}</a>
           </li>
           % else:
-          <li class="nav-global-04">
-            <a class="cta cta-register" href="/register${login_query()}">${_("Register")}</a>
-          </li>
+             % if course:
+                <li class="nav-global-05">
+                <a class="cta cta-register" href="/">${_("Ir a Inicio")}</a>
+                </li>
+             % else:
+                % if (request.path != "/"):
+                   <li class="nav-global-05">
+                   <a class="cta cta-register" href="/">${_("Ir a Inicio")}</a>
+                   </li>
+                % endif
+             % endif
           % endif
-
       % endif
     </ol>
 
@@ -160,7 +167,13 @@ site_status_msg = get_site_status_msg(course_id)
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
           <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
           % else:
-          <a class="cta cta-login" href="/login${login_query()}">${_("Sign in")}</a>
+             % if course and course.display_org_with_default.lower() != "edxorg":
+                <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
+             % else:
+                <a href="${marketing_link('ROOT')}">
+                <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
+                </a>
+             % endif
           % endif
       % endif
     </li>
