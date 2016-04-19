@@ -2,6 +2,8 @@
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
+from courseware.courses import get_course_about_section
+from courseware.courses import get_course
 %>
 <%page args="course" />
 <article class="course" id="${course.id | h}" role="region" aria-label="${course.display_name_with_default}">
@@ -22,9 +24,12 @@ from django.core.urlresolvers import reverse
           <img src="${course.course_image_url | h}" alt="cover image" />
         </div>
         <div class="desc">
-	      <p>MOOC</p>
-          <p>Ver detalles del curso...</p>
-        </div>
+	    <%
+		courseobject = get_course(course.id)
+		courseDescription = get_course_about_section(request, courseobject, 'short_description')
+	    %>	      
+	      ${courseDescription}
+	    </div>
         <div class="bottom">
           <span class="university">${course.display_org_with_default | h}</span>
           % if not course.start_date_is_still_default:
