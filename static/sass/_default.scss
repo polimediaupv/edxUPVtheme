@@ -25,11 +25,10 @@ $gray-75: lighten($gray, 18.25%); //Lighter Text Color
 $gray-3: #ffffff; //Block/Course BG Color
 $gray-2: #f2f2f2;
 $gray-1: #d7d6d1; //Main BG Color
-$white: $gray-1;
+$white: #ffffff;
 
 $black: #2e2e2e;
 $black-80: #585858;
-
 
 
 //-----------------
@@ -44,14 +43,12 @@ $theme-serif-font: 'Crimson Text';
 $serif: $theme-serif-font, $serif;
 
 
-
-
 //-----------------
 //  Theme Element Assignments
 //-----------------
 
-$body-bg: $gray-1;
-$container-bg: $gray-1;
+$body-bg: $white;
+$container-bg: $white;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;
@@ -204,8 +201,9 @@ $video-thumb-url: '../themes/default/images/edx.png';
 //-----------------
 // Override CSS
 //-----------------
-html {
-    height: 100%;
+html, body {
+    height: 100% !important;
+    background-color: #d7d6d1 !important; 
 }
 
 //-----------------
@@ -238,19 +236,23 @@ header.global ol.user {
 }
 
 header.global.slim {
-   box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1);   
-   padding: 0px 0 0px 0;
-   height: 69px;
-   border-bottom: 1px solid gray;
-   background: rgba(255,255,255,1);
+   box-shadow: 0 -6px 3px 3px rgba(0,0,0,0.1) !important;   
+   padding: 0px 0 0px 0 !important;
+   height: 69px !important;
+   border-bottom: 1px solid gray !important;
+   background: rgba(255,255,255,1) !important;
 }
 
 header.global.slim .nav-global {
-  margin-top: 0px;
+  margin-top: 0px !important;
+}
+
+header.global.slim h1.logo {
+  margin: -6px 15px 0px 10px !important;
 }
 
 header.global.slim ol.user {
-   margin-top: 3px;
+   margin-top: 3px !important;
 }
 
 header.global .nav-courseware {
@@ -296,6 +298,59 @@ header.global .nav-courseware {
 }
 
 //-----------------
+// Courseware
+//-----------------
+
+.wrapper-course-material .course-material {
+   padding: 0 !important;
+}
+
+.wrapper-course-material ol.course-tabs {
+   border-top-left-radius: 0px !important;
+   border-top-right-radius: 0px !important;
+   padding: 0px 1px 1px 1px !important;
+   margin-left: 0px !important;
+   background-color: #656565 !important;
+}
+
+.wrapper-course-material ol.course-tabs li {
+   background: #656565 !important;
+}
+
+.wrapper-course-material ol.course-tabs li a {
+   border-radius: 0px;
+   color: #FFF !important;
+   box-shadow: none;
+   text-align: center !important;
+   padding: 5px 10px 5px 10px !important;
+   font-weight: normal !important;
+}
+
+.wrapper-course-material ol.course-tabs li a.active {
+   background-color: #c8c8c8 !important;
+   background-image: linear-gradient(to bottom,#e8e8e8,#c8c8c8) !important;
+   box-shadow: none !important;
+   color: #3f3f3f !important;
+   font-weight: bold !important;
+   text-shadow: none !important;
+}
+
+.container>div {
+   border: none !important;
+}
+
+body.view-in-course .container {
+   padding: 0 !important;
+}
+
+body.view-in-course .info-wrapper {
+   background: #fff !important;
+}
+ 
+div.info-wrapper section.handouts {
+   background: #f8f8f8 !important;
+}
+//-----------------
 // Courses List
 //-----------------
 
@@ -327,6 +382,10 @@ li.courses-listing-item {
     background: #fbfbfb !important;
     border: none !important;
     border-radius: 8px !important;
+}
+
+.highlighted-courses .courses .course .info, .find-courses .courses .course .info a, a:visited {
+    color: #2e2e2e;
 }
 
 .highlighted-courses .courses .course header.course-preview, .find-courses .courses .course header.course-preview {
@@ -469,7 +528,6 @@ li.courses-listing-item {
     font-size: 0.6875em;
 }
 
->>>>>>> a23fda4018f579bd1e838b3c693db20839143cd9
 //-----------------
 // TOS Styling
 //-----------------
@@ -482,3 +540,32 @@ section.tos {
         margin: 50px 0;
     }
 }
+
+//-----------------
+// Forum
+//-----------------
+
+body.discussion .course-tabs .right .new-post-btn {
+    background-color: #c8c8c8;
+    background-image: none;
+    height: 15px;
+    line-height: 15px;
+}
+
+//-----------------
+// Dashboard
+//-----------------
+
+.dashboard .my-courses .wrapper-header-courses .header-courses {
+    margin-left: 30px;
+}
+
+
+//----------------
+// Profile
+//----------------
+.view-profile .window-wrap, .view-profile .content-wrapper {
+    background-color: #c8c8c8;
+}
+
+
