@@ -1,0 +1,59 @@
+## mako
+<%!
+  from django.conf import settings
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+%>
+<%inherit file="/main.html" />
+
+<%namespace name='static' file='/static_content.html'/>
+
+<%block name="pagetitle">${_("FAQ")}</%block>
+
+<section class="container about">
+<h1>${_("FAQ")}</h1>
+<p>En este documento encontraréis un listado de las preguntas más frecuentes y sus respuestas</p>
+<br/>
+<h2><b>General</b></h2>
+
+<p><b>¿Qué es UPVX?</b></p>
+<p style="text-align:justify;">UPV[X] es la plataforma MOOC de la Universitat Politècnica de València. En UPV[X] encontrarás a tu disposición diferentes cursos elaborados por el claustro de profesores de la universidad, cuyas especialidades abarcan un gran número de áreas. Para realizar los contenidos de estos cursos se utiliza la tecnología POLIMEDIA.</p>
+<p><b>¿Qué es un MOOC?</b></p>
+<p style="text-align:justify;">MOOC son las siglas en inglés de Massive Online Open Course, en castellano Cursos Online Masivos y Abiertos. Es una modalidad educativa que se caracteriza por ser abierta y gratuita y estar diseñada sobre una plataforma educativa en Internet que permite un acceso masivo a los cursos, con la finalidad de extender los conocimientos universitarios a un público más amplio.</p>
+<p><b>No soy miembro de la UPV, ¿puedo realizar un curso de UPV[X]?</b></p>
+<p style="text-align:justify;">Por su carácter abierto, los MOOC de la UPV van dirigidos a cualquier persona con acceso a internet, indiferentemente si es miembro de la UPV o no.</p>
+<p><b>¿Qué es POLIMEDIA?</b></p>
+<p style="text-align:justify;">POLIMEDIA es una tecnología elaborada en la UPV para la elaboración de contenidos audiovisuales de calidad de forma rápida y con un bajo coste de producción.</p>
+<p><b>¿Cómo funcionan los cursos de UPV[X]?</b></p>
+<p style="text-align:justify;">La estructura de los cursos consiste fundamentalmente en una serie de vídeos donde se explican los conceptos básicos, segmentados de forma que sea posible consultar cada concepto tantas veces como el alumno necesite; una serie de ejercicios intercalados con los vídeos que permiten al alumno consolidar lo aprendido; unos exámenes tras cada unidad para comprobar la progresión del alumno; un examen final de verificación y, finalmente, un foro de soporte en el que los alumnos pueden intercambiar dudas y conocimientos con el resto de alumnos y los profesores.</p>
+
+<br/>
+<h2><b>Estudiantes</b></h2>
+
+<p><b>¿Cuándo empieza cada curso?</b></p>
+<p style="text-align:justify;">UPV[X] lanza periódicamente nuevas ediciones de sus cursos. Los cursos que ya están en la plataforma normalmente permanecen abiertos tras acabar la edición y se guardan los resultados del alumno; la única particularidad es que no habrá soporte de los profesores en los foros y que no se tiene acceso es al examen final y a la credencial digital. Podrás seguir haciendo el curso tranquilamente y hacer el examen cuando lo volvamos a abrir en la siguiente edición, para obtener así tu credencial.<br/>
+En los casos en los que se cierre el curso al acabar la edición lo avisaremos con antelación.</p>
+<p><b>¿Cuántos cursos puedo realizar?</b></p>
+<p style="text-align:justify;">En principio un alumno puede inscribirse a tantos cursos como quiera, aunque hay que prever que cada curso, en función de su contenido, puede exigir entre 2 y 5 horas semanales de dedicación, aproximadamente.</p>
+<p><b>¿Cuánto dura un curso de UPV[X]?</b></p>
+<p style="text-align:justify;">La duración de los cursos UPV[X] es variable, actualmente los hay desde 3 semanas hasta 12, pero esto puede cambiar.</p>
+<p><b>¿Existen plazos en cada curso?</b></p>
+<p style="text-align:justify;">Es recomendable que el alumno siga el curso en las fechas previstas para cada edición, de forma que pueda compartir su proceso de aprendizaje con el resto de los alumnos, pero no es obligatorio. En aquellos cursos de nueva creación el material se irá abriendo conforme avance el curso.<br/>
+En algunos casos determinados el curso se cerrará al acabar la edición, lo que avisaremos con antelación.</p>
+<p><b>¿Cuál es el material disponible en un curso de UPV[X]?</b></p>
+<p style="text-align:justify;">Cada curso dispone de una serie de vídeos en el que se explican conceptos básicos, vídeos que, en la mayor parte de las ocasiones, van acompañados de un documento de apoyo e intercalados con preguntas tipo test de refuerzo. Al final de cada unidad y al acabar el curso se realizará un examen para evaluar que el alumno ha adquirido los conocimientos que pretende transmitir el curso.</b></p>
+<p><b>¿Cuáles son los requisitos para superar un curso?</b></p>
+<p style="text-align:justify;">El profesor de cada curso determinará el peso de cada examen y el porcentaje necesario para aprobar, lo que estará publicado en la documentación del curso.</b></p>
+<p><b>¿Cómo me inscribo en un curso?</b></p>
+<p style="text-align:justify;">Accede a la página del curso y pulsa en el botón de inscribirse en el curso. Para inscribirte tendrás que crear una cuenta en la plataforma.</b></p>
+
+<br/>
+<h2><b>Acreditaciones</b></h2>
+
+<p><b>¿Qué es una credencial?</b></p>
+<p style="text-align:justify;">En caso de superar el curso, la UPV expedirá una credencial sin valor académico en la que se especificará que el alumno ha realizado el curso y lo ha superado. Esta credencial incluye un enlace a un servidor de la UPV para que se pueda demostrar su autenticidad, hace referencia a que la UPV no puede garantizar la identidad el estudiante y no incluye ni el número de horas del curso ni el listado de unidades.</p>
+<p style="text-align:justify;">La generación de credenciales implica un proceso adicional que hace necesario cerrar la edición y recopilar todos los datos. Una vez generadas las credenciales enviaremos un correo electrónico con una encuesta de satisfacción y un enlace de descarga de la credencial. Este proceso suele tardar entre una semana y 15 días y se inicia al cerrar la edición.</p>
+<br/>
+
+
+</section>

@@ -545,11 +545,12 @@ section.tos {
 // Forum
 //-----------------
 
-body.discussion .course-tabs .right .new-post-btn {
+.new-post-btn {
     background-color: #c8c8c8;
     background-image: none;
-    height: 15px;
-    line-height: 15px;
+    height: 16px;
+    line-height: 16px;
+    border: none;
 }
 
 //-----------------
@@ -567,5 +568,4 @@ body.discussion .course-tabs .right .new-post-btn {
 .view-profile .window-wrap, .view-profile .content-wrapper {
     background-color: #c8c8c8;
 }
-
 
