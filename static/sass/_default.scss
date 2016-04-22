@@ -562,17 +562,42 @@ body.discussion .course-tabs .right .new-post-btn {
 }
 
 header.global .user a.user-link {
-   border-radius: 3px;
+    border-radius: 3px;
 }
 header.global .user a.user-link div {
-   margin-right: 8px;
+    margin-right: 8px;
 }
 
+.dashboard .my-courses {
+    margin-left: 20px;
+    width: 95%;
+}
 
 //----------------
 // Profile
 //----------------
+
 .view-profile .window-wrap, .view-profile .content-wrapper {
-    background-color: #c8c8c8;
+    background-color: #d7d6d1;
+}
+
+.view-profile .wrapper-profile-sections {
+    padding: 40px;
+}
+
+.wrapper-account-settings {
+    padding: 20px;
+}
+
+//----------------
+// Password reset
+//----------------
+
+.view-passwordreset header.global nav {
+    width: 940px;
+}
+
+.view-passwordreset .introduction {
+    width: 950px;
 }
 
