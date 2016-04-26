@@ -378,6 +378,10 @@ li.courses-listing-item {
     padding: 25px 15px 15px 30px !important;
 }
 
+.highlighted-courses .courses, .find-courses .courses {
+    padding: 15px 20px 15px;
+}
+
 .highlighted-courses .courses .course, .find-courses .courses .course {
     background: #fbfbfb !important;
     border: none !important;
@@ -430,6 +434,10 @@ li.courses-listing-item {
 
 .course-info header.course-profile{
     margin-top: 0px;
+}
+
+.course-info header.course-profile .intro-inner-wrapper .intro>hgroup h1 {
+    font-size: 24px;
 }
 
 .course-info .container nav, .course-info section.outside-app nav {
@@ -569,8 +577,8 @@ header.global .user a.user-link div {
 }
 
 .dashboard .my-courses {
-    margin-left: 20px;
-    width: 95%;
+    margin-left: 20px !important;
+    width: 95% !important;
 }
 
 //----------------
@@ -601,3 +609,18 @@ header.global .user a.user-link div {
     width: 950px;
 }
 
+//----------------
+// Login/Register
+//----------------
+
+.login-register .form-wrapper, .financial-assistance-wrapper .financial-assistance-form .form-wrapper {
+    margin-bottom: 60px;
+}
+
+//----------------
+// Wiki
+//----------------
+
+section.wiki .wiki-wrapper>header {
+    background-color: #f8f8f8;
+}
