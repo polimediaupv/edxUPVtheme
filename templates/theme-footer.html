@@ -7,7 +7,7 @@
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script language="JavaScript">
     $(function() {
@@ -197,22 +197,26 @@
       <nav class="nav-social">
         <ul>
           <li class="nav-social-02">
-            <a href="http://www.facebook.com/upvx.es" rel="external">
+              <g:plusone size="tall"></g:plusone>
+          </li>
+
+          <li class="nav-social-03">
+            <a href="http://www.facebook.com/upvx.es" target="_blank" rel="external">
               <img src="${static.url('images/social/ico-social-facebook.png')}" alt="Facebook UPV[X]" />
             </a>
           </li>
-          <li class="nav-social-03">
-            <a href="https://twitter.com/upvx" rel="external">
+          <li class="nav-social-04">
+            <a href="https://twitter.com/upvx" target="_blank"  rel="external">
               <img src="${static.url('images/social/ico-social-twitter.png')}" alt="Twitter UPV[X]" />
             </a>
           </li>
-          <li class="nav-social-04">
-            <a href="https://plus.google.com/113182363688818072141/" rel="external">
+          <li class="nav-social-05">
+            <a href="https://plus.google.com/113182363688818072141/" target="_blank"  rel="external">
               <img src="${static.url('images/social/ico-social-google.png')}" alt="Google+ UPV[X]" />
             </a>
           </li>
-          <li class="nav-social-05">
-            <a href="http://youtube.com/valenciaupv" rel="external">
+          <li class="nav-social-06">
+            <a href="http://youtube.com/valenciaupv" target="_blank" rel="external">
               <img src="${static.url('images/social/ico-social-youtube.png')}" alt="YouTube UPV" />
             </a>
           </li>
