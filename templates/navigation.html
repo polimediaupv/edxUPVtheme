@@ -50,11 +50,11 @@ site_status_msg = get_site_status_msg(course_id)
     <h1 class="logo">
     % if user.is_authenticated():
         <a href="${marketing_link('ROOT')}">
-              <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
+              <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="UPV[X] Plataforma MOOC de la UPV" height="30">
         </a>
     % else: 
         <a href="http://www.upv.es">
-              <img src="${static.url('themes/default/images/header-logo.png')}" alt="UPV" height="74">
+              <img src="${static.url('themes/default/images/header-logo.png')}" alt="Enlace a la página de la UPV desde la plataforma MOOC upvx.es" height="74">
         </a>
     % endif  
     </h1>
@@ -171,7 +171,7 @@ site_status_msg = get_site_status_msg(course_id)
                 <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
              % else:
                 <a href="${marketing_link('ROOT')}">
-                <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="${platform_name()}" height="30">
+                <img src="${static.url('themes/default/images/upvx-logo.png')}" alt="UPV[X] Plataforma MOOC de la UPV" height="30">
                 </a>
              % endif
           % endif
