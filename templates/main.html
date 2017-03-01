@@ -117,11 +117,11 @@ from branding import api as branding_api
   <meta name="path_prefix" content="${EDX_ROOT_URL}">
   <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
 
-<% ga_acct = microsite.get_value("GOOGLE_ANALYTICS_ACCOUNT", settings.GOOGLE_ANALYTICS_ACCOUNT) %>
-% if ga_acct:
+## <% ga_acct = microsite.get_value("GOOGLE_ANALYTICS_ACCOUNT", settings.GOOGLE_ANALYTICS_ACCOUNT) %>
+## % if ga_acct:
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '${ga_acct}']);
+    _gaq.push(['_setAccount', 'UA-37045027-1']);
     _gaq.push(['_trackPageview']);
 
     (function() {
@@ -130,7 +130,7 @@ from branding import api as branding_api
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
-% endif
+## % endif
 
 </head>
 
