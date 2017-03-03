@@ -138,6 +138,24 @@ from datetime import datetime as dt
 	        }
 	        return false;
 	    });
+
+            
+            $(function() {
+
+                $("li.courses-listing-item").each(function() {
+
+                      if ($(this).find("div.desc")[0].innerHTML.match(/continu|Self/) ) {
+
+                           nodo_fecha = $(this).find("span.start-date")[0];
+
+                           nodo_bottom = $(this).find("div.bottom")[0];
+
+                           nodo_bottom.removeChild(nodo_fecha);
+		      }
+
+	        });
+             });
+
 	</script>
 </section>
 
