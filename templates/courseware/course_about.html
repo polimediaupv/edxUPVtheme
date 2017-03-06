@@ -21,6 +21,20 @@ from openedx.core.lib.courses import course_image_url
 
   <script type="text/javascript">
   (function() {
+
+    $(function() {
+		if ($("section.about").text().match(/continu|Self/i)){
+			
+			if(document.querySelector("span.start-date")){
+			  document.querySelector("span.start-date").innerHTML="";
+			}
+
+			if(document.querySelector("span.final-date")){
+			  document.querySelector("span.final-date").innerHTML="";
+			}
+		}
+		});
+
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
