@@ -23,17 +23,23 @@ from openedx.core.lib.courses import course_image_url
   (function() {
 
     $(function() {
-		if ($("section.about").text().match(/continu|Self/i)){
-			
-			if(document.querySelector("span.start-date")){
-			  document.querySelector("span.start-date").innerHTML="";
-			}
+		
+               if ($("section.about").text().match(/continu|Self/i)){
+        
+        if(document.querySelector("span.start-date")){
+          var parent = document.querySelector("span.start-date").parentNode;
+          parent.parentNode.removeChild(parent);
 
-			if(document.querySelector("span.final-date")){
-			  document.querySelector("span.final-date").innerHTML="";
-			}
-		}
-		});
+
+        }
+        
+        if(document.querySelector("span.final-date")){
+          var parent = document.querySelector("span.final-date").parentNode;
+          parent.parentNode.removeChild(parent);
+        }
+}
+
+    });
 
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
