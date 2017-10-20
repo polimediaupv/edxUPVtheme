@@ -154,6 +154,12 @@ from datetime import datetime as dt
 		      }
 
 	        });
+                $("li.courses-listing-item").each(function(){
+                    entidad = $(this).find("p.university")[0].innerHTML;
+                    if (entidad == 'edxorg') {
+                        $(this).find("p.university")[0].innerHTML='edX';
+                    }
+                });
              });
 
 	</script>
