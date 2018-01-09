@@ -46,6 +46,12 @@ from openedx.core.lib.courses import course_image_url
       event.preventDefault();
     });
 
+    % if course.display_org_with_default.lower() == "edxorg":
+        
+            setTimeout(function(){window.location.href = "https://www.edx.org/course/${course.display_number_with_default}-upvalenciax-${course.location.run}";
+        	}, 30000);
+    % endif
+
     % if can_add_course_to_cart:
       add_course_complete_handler = function(jqXHR, textStatus) {
         if (jqXHR.status == 200) {
